@@ -124,8 +124,6 @@ function! s:isabsolute(dir) abort
   return a:dir =~# '^/' || (has('win32') && a:dir =~? '^\%(\\\|[A-Z]:\)')
 endfunction
 
-
-
 function! s:git_dir(dir) abort
   let gitdir = s:trim(a:dir) . '/.git'
   if isdirectory(gitdir)
@@ -407,7 +405,7 @@ function! plug#end()
 
   for [map, names] in items(lod.map)
     for [mode, map_prefix, key_prefix] in
-          \ [['i', '<C-O>', ''], ['n', '', ''], ['v', '', 'gv'], ['o', '', '']]
+          \ [['i', '<C-\><C-O>', ''], ['n', '', ''], ['v', '', 'gv'], ['o', '', '']]
       execute printf(
       \ '%snoremap <silent> %s %s:<C-U>call <SID>lod_map(%s, %s, %s, "%s")<CR>',
       \ mode, map, map_prefix, string(map), string(names), mode != 'i', key_prefix)

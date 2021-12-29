@@ -60,8 +60,9 @@ in
   };
 
   # dotfiles
-  home.file."config/nvim/init.vim".source = ./dots/config/nvim/init.vim;
-  home.file."config/nvim/coc-settings.json".source = ./dots/config/nvim/coc-settings.json;
+  home.file.".config/nvim/init.vim".source = ./dots/config/nvim/init.vim;
+  home.file.".config/nvim/coc-settings.json".source = ./dots/config/nvim/coc-settings.json;
+  home.file.".config/nvim/autoload/plug.vim".source = ./dots/config/nvim/autoload/plug.vim;
   home.file.".vimrc".source = ./dots/vimrc;
 
   # tmux
