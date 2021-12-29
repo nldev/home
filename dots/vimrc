@@ -1,0 +1,77 @@
+set nocompatible               " disable vi compability
+
+filetype off      
+" load plugins here
+filetype plugin indent on
+
+" default theme
+syntax on
+color industry
+hi Normal guibg=NONE ctermbg=NONE
+
+" status line
+set stl=%f%m\ B:%n\ C:%v\ L:%l/%L[%p%%]%=[%b][0x%B]
+
+set number                     " show line numbers
+set relativenumber             " show relative line numbers
+set linebreak                  " break lines at word (requires wrap lines)
+set showbreak=+++              " wrap-broken line prefix
+set textwidth=100              " line wrap (number of cols)
+set showmatch                  " highlight matching brace
+set belloff=all                " turn off visual bell and beep
+
+set timeoutlen=1000            " set key sequence timeout
+set ttimeoutlen=0              " remove key code delay
+
+set scrolloff=8                " always keep cursor 8 lines from boundary
+set fillchars=""               " remove unnecessary chars in separators
+set clipboard+=unnamed         " add unnamed register to clipboard
+set wildmenu                   " improve command-line completion
+set autoread                   " automatically read file when changed on disk
+
+set hlsearch                   " highlight all search results
+set smartcase                  " enable smart-case search
+set ignorecase                 " always case-insensitive
+set incsearch                  " searches for strings incrementally
+  
+set autoindent                 " auto-indent new lines
+set expandtab                  " use spaces instead of tabs
+set shiftwidth=2               " number of auto-indent spaces
+set smartindent	               " enable smart-indent
+set smarttab                   " enable smart-tabs
+set softtabstop=2              " number of spaces per tab
+
+set ruler                      " show row and column ruler information
+
+set autochdir                  " change working directory to open buffer
+set autowriteall               " auto-write all file changes
+set nobackup                   " disable backup
+set noswapfile                 " disable swap file
+set undofile                   " maintain undo history between sessions
+set undodir=~/.undo            " undo directories
+set undolevels=10000           " number of undo levels
+set backspace=indent,eol,start " backspace behaviour
+
+set laststatus=2               " always draw status line
+set ch=2                       " make command line 2 lines high
+set lazyredraw                 " do not update the display while executing macros
+set noshowcmd                  " do not show the current command
+set showmode                   " show the current mode
+
+" turn off j / k bell
+noremap <expr> k ((line('.')==1)?'':'k')
+noremap <expr> j ((line('.')==line('$'))?'':'j')
+
+" keybind: leader key
+noremap <space> <nop>
+let mapleader=" "
+
+" keybind: map semicolon to colon
+nmap ; :
+
+" keybind: clear search highlighting
+nmap <silent> <space>c :nohls<CR>
+
+" keybind: toggle paste mode
+nmap <silent> <F2> :set invpaste<CR>:set paste?<CR>
+
