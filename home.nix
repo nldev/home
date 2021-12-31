@@ -13,6 +13,8 @@ in
       gcc
       lua
       dos2unix
+      fasd
+      nnn
       ranger
       neovim
       tmux
@@ -41,6 +43,22 @@ in
 
   programs.home-manager.enable = true;
 
+  # fish
+  programs.fish = {
+    enable = true;
+    plugins = [
+      {
+        name = "fasd";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-fasd";
+          rev = "38a5b6b6011106092009549e52249c6d6f501fba";
+          sha256 = "06v37hqy5yrv5a6ssd1p3cjd9y3hnp19d3ab7dag56fs1qmgyhbs";
+        };
+      }
+    ];
+  };
+
   # git
   programs.git = {
     enable = true;
@@ -64,30 +82,4 @@ in
   home.file.".config/nvim/coc-settings.json".source = ./dots/config/nvim/coc-settings.json;
   home.file.".config/nvim/autoload/plug.vim".source = ./dots/config/nvim/autoload/plug.vim;
   home.file.".vimrc".source = ./dots/vimrc;
-
-  # tmux
-  # programs.tmux = {
-  #   enable = true;
-  #   terminal = "screen-256color";
-  #   shortcut = "a";
-  #   baseIndex = 1;
-  #   keyMode = "vi";
-  #   sensibleOnTop  = true;
-  #   plugins = with pkgs; [
-  #     tmuxPlugins.pain-control
-  #     tmuxPlugins.copycat
-  #     tmuxPlugins.yank
-  #     tmuxPlugins.logging
-  #   ];
-  # };
-
-  # neovim
-  # programs.neovim = {
-  #   plugins = [
-  #     {
-  #       plugin = pkgs.vimPlugins.sql-nvim;
-  #       config = "let g:sqlite_clib_path = '${pkgs.sqlite.out}/lib/libsqlite3.so'";
-  #     }
-  #   ];
-  # };
 }
