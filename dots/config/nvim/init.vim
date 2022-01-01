@@ -1758,7 +1758,7 @@ function! RefreshScreen ()
     bnext
     let l:b = buffer_number()
     if (l:a == l:b)
-      CreateEmptyBuffer()
+      call CreateEmptyBuffer()
       bd
     endif
   endif
