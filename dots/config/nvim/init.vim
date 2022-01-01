@@ -1800,7 +1800,7 @@ call NormalVisual('<leader>rr', ':source $MYVIMRC<cr><cmd>noh<cr>')
 call NormalVisual('<silent> <leader>e', '<cmd>call CreateEmptyBuffer()<cr>')
 
 " keybind: clear search highlighting
-call NormalVisual('<silent> <leader>c', '<cmd>NvimTreeRefresh<cr><cmd>GitGutter<cr>e<cmd><cr><cmd>noh<cr>:echo<cr>:<backspace>')
+call NormalVisual('<silent> <leader>c', '<cmd>NvimTreeRefresh<cr><cmd>GitGutter<cr><cmd>checktime<cr><cmd>noh<cr>:echo<cr>:<backspace>')
 
 " keybind: open new tab
 call NormalVisual('<silent> <m-e>', ':tabnew<cr>')
