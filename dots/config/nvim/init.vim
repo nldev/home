@@ -2559,5 +2559,5 @@ nnoremap <leader>gud <cmd>call system('git pull origin develop')<cr><cmd>GitGutt
 nnoremap <leader>gum <cmd>call system('git pull origin main')<cr><cmd>GitGutter<cr><cmd>echo 'pulled from main'<cr>
 
 " keybind: fugitive - pull master
-nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>GitGutter<cr><cmd>echo 'pulled rom master'<cr>
+nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>GitGutter<cr><cmd>echo 'pulled from master'<cr>
 
