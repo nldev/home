@@ -2477,9 +2477,9 @@ nnoremap <silent> <leader>k; <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><
 
 " edit config
 if g:os == 'Windows'
-  nnoremap <silent> <leader>rc <cmd>e \\wsl.localhost\Ubuntu\home\user\.config\nixpkgs\dots\config\nvim\init.vim<cr>
+  nnoremap <silent> <leader>ro <cmd>e \\wsl.localhost\Ubuntu\home\user\.config\nixpkgs\dots\config\nvim\init.vim<cr>
 else
-  nnoremap <silent> <leader>rc <cmd>e ~/.config/nixpkgs/dots/config/nvim/init.vim<cr>
+  nnoremap <silent> <leader>ro <cmd>e ~/.config/nixpkgs/dots/config/nvim/init.vim<cr>
 endif
 
 " windows copy config
