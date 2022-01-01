@@ -2528,6 +2528,7 @@ nnoremap <leader>ga :Git add<space>
 " keybind: fugitive - add all
 nnoremap <leader>g. <cmd>call system('git add .')<cr>
 
+
 " keybind: fugitive - commit
 nnoremap <leader>gc :Git commit -m '
 
