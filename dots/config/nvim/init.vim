@@ -2519,11 +2519,11 @@ nnoremap <leader>gg :Git<space>
 nnoremap <leader>ga :Git add<space>
 
 " keybind: fugitive - commit
-nnoremap <leader>gc :Git commit -m<space>
+nnoremap <leader>gc :Git commit -m '
 
 " keybind: fugitive - push
-nnoremap <leader>gp :Git push <space>
+nnoremap <leader>gp :Git push<space>
 
 " keybind: fugitive - push origin
-nnoremap <leader>gp :Git push origin '<apace>
+nnoremap <leader>gP :Git push origin<apace>
 
