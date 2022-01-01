@@ -1752,9 +1752,9 @@ EOF
 " refresh screen
 function! RefreshScreen ()
   :GitGutter
-  if (bufname('%') != '__Scratch__')
-    wincmd s
-    wincmd q
+  if (IsCodeBuffer() == 1) && (bufname('%') != '__Scratch__')
+    bprev
+    bnext
   endif
 endfunction
 
