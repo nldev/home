@@ -2525,6 +2525,9 @@ nnoremap <leader>gg :Git<space>
 " keybind: fugitive - add
 nnoremap <leader>ga :Git add<space>
 
+" keybind: fugitive - create new buffer
+nnoremap <leader>gB :Git checkout -b<space>
+
 " keybind: fugitive - add all
 nnoremap <leader>ge <cmd>call system('git add .')<cr><cmd>GitGutter<cr><cmd>echo 'git: added all files'<cr>
 
