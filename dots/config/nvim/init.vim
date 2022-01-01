@@ -2531,8 +2531,14 @@ nnoremap <leader>gp :Git push<space>
 " keybind: fugitive - push origin
 nnoremap <leader>go :Git push origin<space>
 
-" keybind: fugitive - push origin
-nnoremap <leader>g; :Git push origin main<cr>
+" keybind: fugitive - push branch
+nnoremap <leader>g; <cmd>execute 'Git push origin ' . GetCurrentBranch()<cr>
+
+" keybind: fugitive - quick add
+nnoremap <leader>g' :Git add --all<cr>:Git commit -m "wip"<cr>
+function! GetCurrentBranch ()
+  return system('bash -c ' . "'" . 'echo $(git symbolic-ref --short HEAD 2>/dev/null)' . "'")
+endfunction
 
 " keybind: fugitive - move
 nnoremap <leader>gm :Gmove<space>
