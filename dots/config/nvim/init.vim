@@ -2529,7 +2529,7 @@ nnoremap <leader>gc :Git commit -m '
 nnoremap <leader>gp :Git push<space>
 
 " keybind: fugitive - push origin
-nnoremap <leader>go <cmd>Git push origin HEAD<r>
+nnoremap <leader>go <cmd>Git push origin HEAD<cr>
 
 " keybind: fugitive - quick add
 nnoremap <leader>g; <cmd>call system('git add .')<cr><cmd>Git commit -m "wip"<cr><cmd>Git push origin HEAD<cr>
