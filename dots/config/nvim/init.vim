@@ -349,6 +349,7 @@ set sessionoptions-=blank                " remove blank buffers
 set nowrap
 au FileType help setlocal wrap
 au FileType markdown setlocal wrap
+au FileType telekasten setlocal wrap
 au FileType mdx setlocal wrap
 
 " wsl clipboard
@@ -876,8 +877,13 @@ if g:os == 'Windows'
 endif
 
 " scratch
-let g:scratch_persistence_file = '/home/user/sync/files/nvim/scratch.md'
-let g:scratch_filetype = 'markdown'
+if g:os == 'Windows'
+  let g:scratch_persistence_file = '~/sync/files/nvim/scratch.md'
+  let g:scratch_filetype = 'markdown'
+else
+  let g:scratch_persistence_file = '/mnt/c/Users/Administrator/sync/files/nvim/scratch.md'
+  let g:scratch_filetype = 'telekasten'
+endif
 let g:scratch_height = 30
 
 " nvim-cmp
@@ -1628,6 +1634,10 @@ function! IsCodeBuffer() abort
   "   return 1
   " endif
 
+  if (&filetype == 'telekasten')
+    return 1
+  endif
+
   if (&filetype == 'markdown')
     return 1
   endif
@@ -1791,7 +1801,7 @@ call NormalVisual('<silent> <c-s>c', ':set cursorcolumn!<cr>')
 call NormalVisual('<leader>rr', ':source $MYVIMRC<cr><cmd>noh<cr>')
 
 " keybind: open empty buffer
-call NormalVisual('<silent> <leader>e', '<cmd>call CreateEmptyBuffer()<cr>:set filetype=markdown<cr>')
+call NormalVisual('<silent> <leader>e', '<cmd>call CreateEmptyBuffer()<cr>')
 
 " keybind: clear search highlighting
 call NormalVisual('<silent> <leader>c', '<cmd>NvimTreeRefresh<cr><cmd>GitGutter<cr><cmd>noh<cr>:echo<cr>:<backspace>')
@@ -2155,14 +2165,11 @@ au BufEnter * if IsPaneBuffer() == 1 | vnoremap <buffer> <silent> <leader>m <cmd
 
 " keybind: scratch - toggle
 call NormalVisual("<leader>'", '<cmd>Scratch<cr>gg')
-au FileType markdown silent! if IsScratchBuffer() == 1 | vnoremap <buffer> <silent> <leader>' <cmd>p<cr>| nnoremap <buffer> <silent> <leader>' <c-w>p<cr>| endif
-
-" keybind: scratch - open file in current window
-call NormalVisual('<silent> <leader>"', ':e ~/.scratch.vim<cr>:setfiletype markdown<cr>')
+au FileType markdown,telekasten silent! if IsScratchBuffer() == 1 | vnoremap <buffer> <silent> <leader>' <cmd>p<cr>| nnoremap <buffer> <silent> <leader>' <c-w>p<cr>| endif
 
 " keybind: scratch - disable window movement
-au FileType markdown silent! if IsScratchBuffer() == 1 | nnoremap <buffer> <silent> <c-j> <c-w>p | nnoremap <buffer> <silent> <c-k> <c-w>p | nnoremap <buffer> <silent> <c-h> <c-w>p | nnoremap <buffer> <silent> <c-l> <c-w>p | endif
-au FileType markdown silent! if IsScratchBuffer() == 1 | nnoremap <buffer> <silent> <c-w>j <c-w>p | nnoremap <buffer> <silent> <c-w>k <c-w>p | nnoremap <buffer> <silent> <c-w>h <c-w>p | nnoremap <buffer> <silent> <c-w>l <c-w>p | endif
+au FileType markdown,telekasten silent! if IsScratchBuffer() == 1 | nnoremap <buffer> <silent> <c-j> <c-w>p | nnoremap <buffer> <silent> <c-k> <c-w>p | nnoremap <buffer> <silent> <c-h> <c-w>p | nnoremap <buffer> <silent> <c-l> <c-w>p | endif
+au FileType markdown,telekasten silent! if IsScratchBuffer() == 1 | nnoremap <buffer> <silent> <c-w>j <c-w>p | nnoremap <buffer> <silent> <c-w>k <c-w>p | nnoremap <buffer> <silent> <c-w>h <c-w>p | nnoremap <buffer> <silent> <c-w>l <c-w>p | endif
 
 " keybind: hop - s
 nmap f <cmd>HopChar1CurrentLineAC<cr>
