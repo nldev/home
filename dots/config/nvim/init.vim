@@ -2586,9 +2586,12 @@ nnoremap <leader>gum <cmd>call system('git pull origin main')<cr><cmd>call Refre
 " keybind: fugitive - pull master
 nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: pulled from master'<cr>
 
+" keybind: fugitive - reset
+nnoremap <leader>gr <cmd>Git reset<cr>
+
 " keybind: vim-flog
-nnoremap <leader>gr <cmd>Flog<cr>
+nnoremap <leader>gf <cmd>Flog<cr>
 
 " keybind: vim-flog - split
-nnoremap <leader>gR <cmd>Flogsplit<cr>
+nnoremap <leader>gF <cmd>Flogsplit<cr>
 
