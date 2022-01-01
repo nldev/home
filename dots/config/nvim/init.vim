@@ -347,10 +347,7 @@ set sessionoptions-=blank                " remove blank buffers
 
 " line wrapping
 set nowrap
-au FileType help setlocal wrap
-au FileType markdown setlocal wrap
-au FileType telekasten setlocal wrap
-au FileType mdx setlocal wrap
+au FileType help,markdown,telekasten,mdx setlocal wrap
 
 " wsl clipboard
 " if (g:isWsl == 1)
