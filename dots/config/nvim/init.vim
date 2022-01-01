@@ -2505,7 +2505,7 @@ endif
 nnoremap <silent> <leader>rs <cmd>FS<cr>
 
 " keybind: taboo - rename
-nnoremap <c-r> :TabooRename<space>
+nnoremap <m-r> :TabooRename<space>
 
 " keybind: taboo - reset
 nnoremap <silent> <leader>rt <cmd>TabooReset<cr>
@@ -2529,7 +2529,7 @@ nnoremap <leader>gc :Git commit -m '
 nnoremap <leader>gp :Git push<space>
 
 " keybind: fugitive - push origin
-nnoremap <leader>go :Git push origin<space>
+nnoremap <leader>gP :Git push origin<space>
 
 " keybind: fugitive - move
 nnoremap <leader>gm :Gmove<space>
