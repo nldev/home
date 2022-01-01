@@ -1576,9 +1576,9 @@ function! IsCodeBuffer() abort
     return 1
   endif
 
-  " if (&filetype == 'vim')
-  "   return 1
-  " endif
+  if (&filetype == 'vim')
+    return 1
+  endif
 
   if (&filetype == 'json')
     return 1
@@ -1632,9 +1632,9 @@ function! IsCodeBuffer() abort
     return 1
   endif
 
-  " if (&filetype == 'mdx')
-  "   return 1
-  " endif
+  if (&filetype == 'mdx')
+    return 1
+  endif
 
   if (&filetype == 'telekasten')
     return 1
