@@ -1754,7 +1754,13 @@ function! RefreshScreen ()
   :GitGutter
   if (IsCodeBuffer() == 1) && (bufname('%') != '__Scratch__')
     bprev
+    let l:a = buffer_number()
     bnext
+    let l:b = buffer_number()
+    if (l:a == l:b)
+      CreateEmptyBuffer()
+      bd
+    endif
   endif
 endfunction
 
