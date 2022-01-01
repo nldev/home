@@ -2534,13 +2534,6 @@ nnoremap <leader>go <cmd>call system('git push origin HEAD')<cr>
 " keybind: fugitive - quick add
 nnoremap <leader>g; <cmd>call system('git add .')<cr><cmd>call system('git commit -m "wip"')<cr><cmd>call system('git push origin HEAD')<cr>
 
-
-
-
-
-
-
-
 " keybind: fugitive - move
 nnoremap <leader>gm :Gmove<space>
 
