@@ -56,9 +56,6 @@ Plug 'Mangeshrex/uwu.vim'
 Plug 'relastle/bluewery.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-" autosave
-Plug 'Pocco81/AutoSave.nvim'
-
 " sqlite
 if g:os == 'Windows'
   Plug 'tami5/sqlite.lua'
@@ -331,10 +328,6 @@ augroup CursorLineGroup
   au WinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 augroup end
-
-" autosave
-set autoread
-au CursorHold * checktime | call feedkeys("lh")
 
 " folding
 set foldmethod=expr
@@ -842,24 +835,6 @@ endif
 if g:os == 'Windows'
   let g:sqlite_clib_path = 'C:\Users\Administrator\sync\files\sqlite\sqlite3.dll'
 endif
-
-" autosave
-lua << EOF
-require'autosave'.setup{
-  events = {"InsertLeave", "TextChanged", "WinLeave", "BufLeave"},
-  conditions = {
-  	exists = true,
-  	filename_is_not = {"__Scratch__"},
-  	filetype_is_not = {},
-  	modifiable = true,
-  },
-  write_all_buffers = true,
-  on_off_commands = false,
-  debounce_delay = 2000,
-  execution_message = "",
-  clean_command_line_interval = 0
-}
-EOF
 
 " telescope
 lua << EOF
@@ -2251,6 +2226,13 @@ nnoremap <silent> <leader>vs <cmd>lua require'dap'.repl.open()<cr>
 " nnoremap <silent> <leader>v :lua require"dapui".close()<cr>
 nnoremap <silent> <leader>vn <cmd>lua require"dapui".toggle()<cr>
 
+" keybind: toggle wrapping
+function! ToggleWrap()
+  set wrap!
+  set linebreak!
+endfunction
+nnoremap <silent> <leader>/ :call ToggleWrap()<cr>
+
 " keybind: tswow
 nnoremap <silent> <leader>t? :lua terminal_send('help\r\n')<cr>
 nnoremap <silent> <leader>tb :lua terminal_send('build database\r\n')<cr>
@@ -2495,9 +2477,30 @@ nnoremap <silent> <leader>k; <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><
 
 " edit config
 if g:os == 'Windows'
-  nnoremap <silent> <leader>rc <cmd>!wsl cp ~/.config/nixpkgs/dots/config/nvim/init.vim /mnt/c/Users/Administrator/AppData/Local/nvim/init.vim<cr><cmd>!wsl cp ~/.config/nixpkgs/dots/config/nvim/init.vim ~/.config/nvim/init.vim<cr><cmd>e \\wsl.localhost\Ubuntu\home\user\.config\nixpkgs\dots\config\nvim\init.vim<cr><cmd>source $MYVIMRC<cr><cmd>noh<cr>
+  nnoremap <silent> <leader>rc <cmd>e \\wsl.localhost\Ubuntu\home\user\.config\nixpkgs\dots\config\nvim\init.vim<cr>
 else
-  nnoremap <silent> <leader>rc <cmd>!cp ~/.config/nixpkgs/dots/config/nvim/init.vim /mnt/c/Users/Administrator/AppData/Local/nvim/init.vim<cr><cmd>!cp ~/.config/nixpkgs/dots/config/nvim/init.vim ~/.config/nvim/init.vim<cr><cmd>e ~/.config/nixpkgs/dots/config/nvim/init.vim<cr><cmd>source $MYVIMRC<cr><cmd>noh<cr>
+  nnoremap <silent> <leader>rc <cmd>e ~/.config/nixpkgs/dots/config/nvim/init.vim<cr>
 endif
 
+" windows copy config
+if g:os == 'Windows'
+  nnoremap <silent> <leader>rw <cmd>!wsl cp ~/.config/nixpkgs/dots/config/nvim/init.vim /mnt/c/Users/Administrator/AppData/Local/nvim/init.vim<cr>
+else
+  nnoremap <silent> <leader>rw <cmd>!cp ~/.config/nixpkgs/dots/config/nvim/init.vim /mnt/c/Users/Administrator/AppData/Local/nvim/init.vim<cr>
+endif
+
+" edit nix
+if g:os == 'Windows'
+  nnoremap <silent> <leader>rn <cmd>e \\wsl.localhost\Ubuntu\home\user\.config\nixpkgs\home.nix<cr>
+else
+  nnoremap <silent> <leader>rn <cmd>e ~/.config/nixpkgs/home.nix<cr>
+endif
+
+" switch nix
+if g:os == 'Windows'
+  command FS FloatermNew --height=0.6 --width=0.6 --wintype=float --position=center --autoclose=2 wsl home-manager switch
+else
+  command FS FloatermNew --height=0.6 --width=0.6 --wintype=float --position=center --autoclose=2 home-manager switch
+endif
+nnoremap <silent> <leader>rs <cmd>FS<cr>
 

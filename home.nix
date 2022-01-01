@@ -10,14 +10,16 @@ in
 {
   home = {
     packages = with pkgs; [
+      gnumake
       gcc
+      fzf
       lua
       dos2unix
       fasd
       nnn
       ranger
+      vim
       neovim
-      tmux
       ripgrep
       python27
       python310
@@ -33,7 +35,6 @@ in
     sessionVariables = {
       LANG = locale;
       LC_ALL = locale;
-      TMUX_TMPDIR = "/tmp";
     };
 
     username = username;
@@ -78,8 +79,10 @@ in
   };
 
   # dotfiles
+  home.file.".config/fish/conf.d/nix-env.fish".source = ./dots/config/fish/conf.d/nix-env.fish;
   home.file.".config/nvim/init.vim".source = ./dots/config/nvim/init.vim;
   home.file.".config/nvim/coc-settings.json".source = ./dots/config/nvim/coc-settings.json;
   home.file.".config/nvim/autoload/plug.vim".source = ./dots/config/nvim/autoload/plug.vim;
   home.file.".vimrc".source = ./dots/vimrc;
 }
+

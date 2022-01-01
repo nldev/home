@@ -14,7 +14,8 @@ set stl=%f%m\ B:%n\ C:%v\ L:%l/%L[%p%%]%=[%b][0x%B]
 
 set number                     " show line numbers
 set relativenumber             " show relative line numbers
-set linebreak                  " break lines at word (requires wrap lines)
+set nowrap                     " turn off line wrapping
+set nolinebreak                " turn off linebreak
 set showbreak=+++              " wrap-broken line prefix
 set textwidth=100              " line wrap (number of cols)
 set showmatch                  " highlight matching brace
@@ -58,20 +59,17 @@ set lazyredraw                 " do not update the display while executing macro
 set noshowcmd                  " do not show the current command
 set showmode                   " show the current mode
 
-" turn off j / k bell
-noremap <expr> k ((line('.')==1)?'':'k')
-noremap <expr> j ((line('.')==line('$'))?'':'j')
-
-" keybind: leader key
+" leader key
 noremap <space> <nop>
 let mapleader=" "
 
-" keybind: map semicolon to colon
-nmap ; :
+" keybind: toggle line wrapping
+function! ToggleWrap()
+  set wrap!
+  set linebreak!
+endfunction
+nnoremap <silent> <leader>/ :call ToggleWrap()<cr>
 
 " keybind: clear search highlighting
-nmap <silent> <space>c :nohls<CR>
-
-" keybind: toggle paste mode
-nmap <silent> <F2> :set invpaste<CR>:set paste?<CR>
+noremap <silent> <space>c :noh<cr>
 
