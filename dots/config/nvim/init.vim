@@ -2531,6 +2531,9 @@ nnoremap <leader>gp :Git push<space>
 " keybind: fugitive - push origin
 nnoremap <leader>go :Git push origin<space>
 
+" keybind: fugitive - push origin
+nnoremap <leader>g; :Git push origin main<space>
+
 " keybind: fugitive - move
 nnoremap <leader>gm :Gmove<space>
 
