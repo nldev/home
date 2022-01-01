@@ -168,9 +168,6 @@ Plug 'glepnir/dashboard-nvim'
 " nvim-tree
 Plug 'kyazdani42/nvim-tree.lua'
 
-" luatab
-Plug 'alvarosevilla95/luatab.nvim'
-
 " lualine
 Plug 'nvim-lualine/lualine.nvim'
 
@@ -188,6 +185,9 @@ Plug 'junegunn/vim-easy-align'
 
 " neoscroll
 Plug 'karb94/neoscroll.nvim'
+
+" taboo
+Plug 'gcmt/taboo.vim'
 
 " nvim-dap
 Plug 'mfussenegger/nvim-dap'
@@ -400,12 +400,6 @@ require'lualine'.setup{
   },
 }
 EOF
-
-" luatab
-lua require'luatab'.setup{}
-
-" nvim-lspconfig
-" lua require'lspconfig'.tsserver.setup{}
 
 " nvim-bqf
 lua << EOF
@@ -2081,12 +2075,12 @@ call NormalVisual('<silent> <leader>uF', '<cmd>UltestDebug<cr>')
 " call NormalVisual('<silent> <leader>ux', '<plug>(ultest-stop-file)')
 call NormalVisual('<silent> <leader>ux', '<cmd>UltestStop<cr>')
 
-" lsp - get info
+" keybind lsp - get info
 inoremap <silent> <c-f> <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap <silent> <leader>ji <cmd>lua vim.lsp.buf.hover()<cr>
 
-" keybind: coc - reload
-" call NormalVisual('<silent> <leader>rl', ':LspRestart<cr>')
+" keybind: lsp - restart
+call NormalVisual('<silent> <leader>rl', ':LspRestart<cr>')
 
 " keybind: coc - info or autocomplete
 " nnoremap <silent> <m-j> :call ShowDocumentation()<cr>
@@ -2502,4 +2496,10 @@ else
   command FS FloatermNew --height=0.6 --width=0.6 --wintype=float --position=center --autoclose=2 home-manager switch
 endif
 nnoremap <silent> <leader>rs <cmd>FS<cr>
+
+" keybind: taboo - rename
+nnoremap <C-R> :TabooRename<space>
+
+" keybind: taboo - reset
+nnoremap <silent> <leader>rt <cmd>TabooReset<cr>
 
