@@ -1990,7 +1990,7 @@ call NormalVisual('<silent> <leader>gl', '<cmd>Telescope git_commits<cr>')
 call NormalVisual('<silent> <leader>gb', '<cmd>Telescope git_bcommits<cr>')
 
 " keybind: telescope - git_branches
-call NormalVisual('<silent> <leader>gr', '<cmd>Telescope git_branches<cr>')
+call NormalVisual('<silent> <leader>gk', '<cmd>Telescope git_branches<cr>')
 
 " keybind: telescope - git_stash
 call NormalVisual('<silent> <leader>gt', '<cmd>Telescope git_stash<cr>')
@@ -2525,8 +2525,8 @@ nnoremap <leader>gg :Git<space>
 " keybind: fugitive - add
 nnoremap <leader>ga :Git add<space>
 
-" keybind: fugitive - create new buffer
-nnoremap <leader>gB :Git checkout -b<space>
+" keybind: fugitive - create and checkout new branch
+nnoremap <leader>gd :Git checkout -b<space>
 
 " keybind: fugitive - add all
 nnoremap <leader>ge <cmd>call system('git add .')<cr><cmd>GitGutter<cr><cmd>echo 'git: added all files'<cr>
