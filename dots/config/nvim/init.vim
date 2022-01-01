@@ -89,6 +89,9 @@ Plug 'tpope/vim-speeddating'
 " vim-unimpaired
 Plug 'tpope/vim-unimpaired'
 
+" vim-fugitive
+Plug 'tpope/vim-fugitive'
+
 " vim-searchlight
 Plug 'PeterRincker/vim-searchlight'
 
@@ -2498,8 +2501,17 @@ endif
 nnoremap <silent> <leader>rs <cmd>FS<cr>
 
 " keybind: taboo - rename
-nnoremap <C-R> :TabooRename<space>
+nnoremap <c-r> :TabooRename<space>
 
 " keybind: taboo - reset
 nnoremap <silent> <leader>rt <cmd>TabooReset<cr>
+
+" keybind: plug - reload
+nnoremap <silent> <leader>rp <cmd>PlugInstall<cr><cmd>PlugUpdate<cr>
+
+" keybind: plug - upgrade
+nnoremap <silent> <leader>rP <cmd>PlugUpgrade<cr><cmd>PlugInstall<cr><cmd>PlugUpdate<cr>
+
+" keybind: fugitive
+nnoremap <leader>gg :Git<space>
 
