@@ -2528,6 +2528,9 @@ nnoremap <leader>ga :Git add<space>
 " keybind: fugitive - create and checkout new branch
 nnoremap <leader>gd :Git checkout -b<space>
 
+
+
+
 " keybind: fugitive - add all
 nnoremap <leader>ge <cmd>call system('git add .')<cr><cmd>GitGutter<cr><cmd>echo 'git: added all files'<cr>
 
