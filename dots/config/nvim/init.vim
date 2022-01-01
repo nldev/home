@@ -1749,6 +1749,15 @@ function _G.terminal_send(text)
 end
 EOF
 
+" refresh screen
+function! RefreshScreen ()
+  :GitGutter
+  if (bufname('%') != '__Scratch__')
+    wincmd s
+    wincmd q
+  endif
+endfunction
+
 " keybind: leader key
 let g:mapleader = " "
 
@@ -1806,7 +1815,7 @@ call NormalVisual('<leader>rr', ':source $MYVIMRC<cr><cmd>noh<cr>')
 call NormalVisual('<silent> <leader>e', '<cmd>call CreateEmptyBuffer()<cr>')
 
 " keybind: clear search highlighting
-call NormalVisual('<silent> <leader>c', '<cmd>NvimTreeRefresh<cr><cmd>GitGutter<cr><cmd>checktime<cr><cmd>noh<cr>:echo<cr>:<backspace>')
+call NormalVisual('<silent> <leader>c', '<cmd>NvimTreeRefresh<cr><cmd>call RefreshScreen()<cr><cmd>checktime<cr><cmd>noh<cr>:echo<cr>:<backspace>')
 
 " keybind: open new tab
 call NormalVisual('<silent> <m-e>', ':tabnew<cr>')
@@ -2536,7 +2545,7 @@ nnoremap <leader>ga :Git add<space>
 nnoremap <leader>gd :Git checkout -b<space>
 
 " keybind: fugitive - add all
-nnoremap <leader>ge <cmd>call system('git add .')<cr><cmd>GitGutter<cr><cmd>echo 'git: added all files'<cr>
+nnoremap <leader>ge <cmd>call system('git add .')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: added all files'<cr>
 
 " keybind: fugitive - commit
 nnoremap <leader>gc :Git commit -m '
@@ -2545,7 +2554,7 @@ nnoremap <leader>gc :Git commit -m '
 nnoremap <leader>gp :Git push<space>
 
 " keybind: fugitive - push origin
-nnoremap <leader>go <cmd>call system('git push origin HEAD')<cr><cmd>GitGutter<cr><cmd>echo 'git: pushed to HEAD'<cr>
+nnoremap <leader>go <cmd>call system('git push origin HEAD')<cr><cmd>Call RefreshScreen()<cr><cmd>echo 'git: pushed to HEAD'<cr>
 
 " keybind: fugitive - interactive add
 nnoremap <leader>gi <cmd>Git add --interactive<cr>
@@ -2554,22 +2563,22 @@ nnoremap <leader>gi <cmd>Git add --interactive<cr>
 nnoremap <leader>gw <cmd>call system('git commit -m "WIP"')<cr><cmd>echo 'git: created WIP commit'<cr>
 
 " keybind: fugitive - quick add
-nnoremap <leader>g; <cmd>call system('git add .')<cr><cmd>call system('git commit -m "WIP"')<cr><cmd>call system('git push origin HEAD')<cr><cmd>GitGutter<cr><cmd>echo 'git: pushed WIP commit to HEAD'<cr>
+nnoremap <leader>g; <cmd>call system('git add .')<cr><cmd>call system('git commit -m "WIP"')<cr><cmd>call system('git push origin HEAD')<cr><cmd>Call RefreshScreen()<cr><cmd>echo 'git: pushed WIP commit to HEAD'<cr>
 
 " keybind: fugitive - move
 nnoremap <leader>gm :Gmove<space>
 
 " keybind: fugitive - pull origin
-nnoremap <leader>guu <cmd>call system('git pull origin HEAD')<cr><cmd>GitGutter<cr><cmd>echo 'git: pulled from HEAD'<cr>
+nnoremap <leader>guu <cmd>call system('git pull origin HEAD')<cr><cmd>Call RefreshScreen()<cr><cmd>echo 'git: pulled from HEAD'<cr>
 
 " keybind: fugitive - pull develop
-nnoremap <leader>gud <cmd>call system('git pull origin develop')<cr><cmd>GitGutter<cr><cmd>echo 'git: pulled from develop'<cr>
+nnoremap <leader>gud <cmd>call system('git pull origin develop')<cr><cmd>Call RefreshScreen()<cr><cmd>echo 'git: pulled from develop'<cr>
 
 " keybind: fugitive - pull main
-nnoremap <leader>gum <cmd>call system('git pull origin main')<cr><cmd>GitGutter<cr><cmd>echo 'git: pulled from main'<cr>
+nnoremap <leader>gum <cmd>call system('git pull origin main')<cr><cmd>Call RefreshScreen()<cr><cmd>echo 'git: pulled from main'<cr>
 
 " keybind: fugitive - pull master
-nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>GitGutter<cr><cmd>echo 'git: pulled from master'<cr>
+nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>Call RefreshScreen()<cr><cmd>echo 'git: pulled from master'<cr>
 
 " keybind: vim-flog
 nnoremap <leader>gr <cmd>Flog<cr>
