@@ -128,6 +128,7 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'ray-x/lsp_signature.nvim'
+Plug 'williamboman/nvim-lsp-installer'
 
 " vim-vsnip
 Plug 'hrsh7th/vim-vsnip'
@@ -1065,10 +1066,8 @@ EOF
 " nvim-dap: javascript
 lua << EOF
 local dap_install = require('dap-install')
-dap_install.config('jsnode', {})
-if vim.g.os ~= 'Windows' then
-end
 local dap = require('dap')
+dap_install.config('jsnode', {})
 dap.configurations.typescript = {
   {
     name = 'Run',
@@ -1794,7 +1793,7 @@ call NormalVisual('<leader>rr', ':source $MYVIMRC<cr><cmd>noh<cr>')
 call NormalVisual('<silent> <leader>e', '<cmd>call CreateEmptyBuffer()<cr>:set filetype=markdown<cr>')
 
 " keybind: clear search highlighting
-call NormalVisual('<silent> <leader>c', '<cmd>noh<cr>:echo<cr>:<backspace>')
+call NormalVisual('<silent> <leader>c', '<cmd>NvimTreeRefresh<cr><cmd>noh<cr>:echo<cr>:<backspace>')
 
 " keybind: open new tab
 call NormalVisual('<silent> <m-e>', ':tabnew<cr>')
@@ -2146,7 +2145,7 @@ vnoremap <silent> <leader>jn <cmd>silent! SymbolsOutline<cr><c-w>p
 call NormalVisual('<silent> <leader>r9', ':NvimTreeRefresh<cr>')
 
 " keybind: nvim-tree - focus
-call NormalVisual('<silent> <leader>m', ':NvimTreeFocus<cr>')
+call NormalVisual('<silent> <leader>m', '<cmd>NvimTreeRefresh<cr><cmd>NvimTreeFocus<cr>')
 au FileType Outline nnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>
 au FileType Outline vnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>
 au FileType NvimTree nnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>
