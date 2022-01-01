@@ -2422,26 +2422,27 @@ if g:os == 'Windows'
   call NormalVisual('<silent> <leader>nn', ':lua require"telescope.builtin".file_browser{ cwd = "~/sync/notes" }<cr>')
   call NormalVisual('<silent> <leader>nc', ':call NewNote()')
 else
-  nnoremap <leader>nn :lua require('telekasten').find_notes()<cr>
-  nnoremap <leader>nd :lua require('telekasten').find_daily_notes()<cr>
-  nnoremap <leader>ng :lua require('telekasten').search_notes()<cr>
-  nnoremap <leader>nz :lua require('telekasten').follow_link()<cr>
-  nnoremap <leader>nt :lua require('telekasten').goto_today()<cr>
-  " nnoremap <leader>nW :lua require('telekasten').goto_thisweek()<cr>
-  " nnoremap <leader>nw :lua require('telekasten').find_weekly_notes()<cr>
-  nnoremap <leader>nc :lua require('telekasten').new_note()<cr>
-  nnoremap <leader>nC :lua require('telekasten').new_templated_note()<cr>
-  nnoremap <leader>ny :lua require('telekasten').yank_notelink()<cr>
-  nnoremap <leader>nx :lua require('telekasten').show_calendar()<cr>
-  nnoremap <leader>nX :CalendarT<cr>
-  nnoremap <leader>ni :lua require('telekasten').paste_img_and_link()<cr>
-  nnoremap <leader>nf :lua require('telekasten').toggle_todo()<cr>
-  nnoremap <leader>nb :lua require('telekasten').show_backlinks()<cr>
-  nnoremap <leader>nN :lua require('telekasten').find_friends()<cr>
-  nnoremap <leader>nI :lua require('telekasten').insert_img_link({ i=true })<cr>
-  nnoremap <leader>np :lua require('telekasten').preview_img()<cr>
-  nnoremap <leader>nm :lua require('telekasten').browse_media()<cr>
-  nnoremap <leader>na :lua require('telekasten').show_tags()<cr>
+  nnoremap <leader>nn <cmd>lua require('telekasten').find_notes()<cr>
+  nnoremap <leader>nd <cmd>lua require('telekasten').find_daily_notes()<cr>
+  nnoremap <leader>ng <cmd>lua require('telekasten').search_notes()<cr>
+  nnoremap <leader>nz <cmd>lua require('telekasten').follow_link()<cr>
+  nnoremap <leader>nt <cmd>lua require('telekasten').goto_today()<cr>
+  " nnoremap <leader>nW <cmd>lua require('telekasten').goto_thisweek()<cr>
+  " nnoremap <leader>nw <cmd>lua require('telekasten').find_weekly_notes()<cr>
+  nnoremap <leader>nc <cmd>lua require('telekasten').new_note()<cr>
+  nnoremap <leader>nC <cmd>lua require('telekasten').new_templated_note()<cr>
+  nnoremap <leader>ny <cmd>lua require('telekasten').yank_notelink()<cr>
+  nnoremap <leader>nx <cmd>lua require('telekasten').show_calendar()<cr>
+  nnoremap <leader>nX <cmd>CalendarT<cr>
+  nnoremap <leader>ni <cmd>lua require('telekasten').paste_img_and_link()<cr>
+  nnoremap <leader>nf <cmd>lua require('telekasten').toggle_todo()<cr>
+  nnoremap <leader>nF <cmd>lua require('telekasten').toggle_todo()<cr><cmd>lua require('telekasten').toggle_todo()<cr>
+  nnoremap <leader>nb <cmd>lua require('telekasten').show_backlinks()<cr>
+  nnoremap <leader>nN <cmd>lua require('telekasten').find_friends()<cr>
+  nnoremap <leader>nI <cmd>lua require('telekasten').insert_img_link({ i=true })<cr>
+  nnoremap <leader>np <cmd>lua require('telekasten').preview_img()<cr>
+  nnoremap <leader>nm <cmd>lua require('telekasten').browse_media()<cr>
+  nnoremap <leader>na <cmd>lua require('telekasten').show_tags()<cr>
 
   " telekasten - on wait - bring up the panel
   nnoremap <leader>z :lua require('telekasten').panel()<cr>
