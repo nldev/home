@@ -876,7 +876,7 @@ if g:os == 'Windows'
 endif
 
 " scratch
-let g:scratch_persistence_file = '~/.scratch.vim'
+let g:scratch_persistence_file = '~/sync/nvim/scratch.vim'
 let g:scratch_filetype = 'markdown'
 let g:scratch_height = 30
 
