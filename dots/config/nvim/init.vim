@@ -1794,7 +1794,7 @@ call NormalVisual('<leader>rr', ':source $MYVIMRC<cr><cmd>noh<cr>')
 call NormalVisual('<silent> <leader>e', '<cmd>call CreateEmptyBuffer()<cr>:set filetype=markdown<cr>')
 
 " keybind: clear search highlighting
-call NormalVisual('<silent> <leader>c', '<cmd>NvimTreeRefresh<cr><cmd>noh<cr>:echo<cr>:<backspace>')
+call NormalVisual('<silent> <leader>c', '<cmd>NvimTreeRefresh<cr><cmd>GitGutter<cr><cmd>noh<cr>:echo<cr>:<backspace>')
 
 " keybind: open new tab
 call NormalVisual('<silent> <m-e>', ':tabnew<cr>')
@@ -2532,7 +2532,7 @@ nnoremap <leader>gp :Git push<space>
 nnoremap <leader>go <cmd>call system('git push origin HEAD')<cr>
 
 " keybind: fugitive - quick add
-nnoremap <leader>g; <cmd>call system('git add .')<cr><cmd>call system('git commit -m "wip"')<cr><cmd>call system('git push origin HEAD')<cr>
+nnoremap <leader>g; <cmd>call system('git add .')<cr><cmd>call system('git commit -m "wip"')<cr><cmd>call system('git push origin HEAD')<cr><cmd>GitGutter<cr>
 
 " keybind: fugitive - move
 nnoremap <leader>gm :Gmove<space>
