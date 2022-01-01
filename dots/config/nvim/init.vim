@@ -2525,5 +2525,5 @@ nnoremap <leader>gc :Git commit -m '
 nnoremap <leader>gp :Git push<space>
 
 " keybind: fugitive - push origin
-nnoremap <leader>gP :Git push origin<apace>
+nnoremap <leader>gP :Git push origin<space>
 
