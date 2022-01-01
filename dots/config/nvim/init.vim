@@ -1,8 +1,6 @@
 set nocompatible  " disable vi compability
 set encoding=utf8 " set encoding to utf-8
 
-let g:isWsl = 0
-
 if !exists('g:os')
   if has('win64') || has('win32') || has('win16')
     let g:os = 'Windows'
@@ -10,6 +8,8 @@ if !exists('g:os')
     let g:os = substitute(system('uname'), '\n', '', '')
   endif
 endif
+
+let g:isWsl = 0
 
 let uname = substitute(system('uname'),'\n','','')
 if uname == 'Linux'
