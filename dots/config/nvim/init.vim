@@ -418,7 +418,11 @@ EOF
 " create new buffer
 function! CreateEmptyBuffer()
   enew
-  set filetype=markdown
+  if g:os == 'windows'
+    set filetype=markdown
+  else
+    set filetype=telekasten
+  endif
   " let l:date = strftime('%H%M%S')
   " execute 'file ' . l:date
 endfunction
