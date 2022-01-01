@@ -380,6 +380,9 @@ if g:os == 'Windows'
   set shell=cmd
 endif
 
+" always refresh
+autocmd BufEnter * checktime
+
 " markdown
 let g:markdown_fenced_languages = [
   \ 'js=javascript',
