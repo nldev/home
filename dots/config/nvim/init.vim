@@ -876,10 +876,11 @@ endif
 " scratch
 if g:os == 'Windows'
   let g:scratch_persistence_file = '~/sync/files/nvim/scratch.md'
+  let g:scratch_filetype = 'telekasten'
 else
   let g:scratch_persistence_file = '/mnt/c/Users/Administrator/sync/files/nvim/scratch.md'
+  let g:scratch_filetype = 'markdown'
 endif
-let g:scratch_filetype = 'markdown'
 let g:scratch_height = 30
 
 " nvim-cmp
