@@ -2586,4 +2586,3 @@ nnoremap <leader>gr <cmd>Flog<cr>
 " keybind: vim-flog - split
 nnoremap <leader>gR <cmd>Flogsplit<cr>
 
-
