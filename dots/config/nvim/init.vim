@@ -2505,10 +2505,10 @@ endif
 nnoremap <silent> <leader>rs <cmd>FS<cr>
 
 " keybind: taboo - rename
-nnoremap <m-r> :TabooRename<space>
+nnoremap <leader>rt :TabooRename<space>
 
 " keybind: taboo - reset
-nnoremap <silent> <leader>rt <cmd>TabooReset<cr>
+nnoremap <silent> <leader>rT <cmd>TabooReset<cr>
 
 " keybind: plug - reload
 nnoremap <silent> <leader>rp <cmd>PlugInstall<cr><cmd>PlugUpdate<cr>
