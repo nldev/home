@@ -1974,7 +1974,7 @@ call NormalVisual('<silent> <leader>ko', '<cmd>Telescope oldfiles<cr>')
 call NormalVisual('<silent> <leader>kx', '<cmd>Telescope commands<cr>')
 
 " keybind: telescope - git_commits
-call NormalVisual('<silent> <leader>gc', '<cmd>Telescope git_commits<cr>')
+call NormalVisual('<silent> <leader>gl', '<cmd>Telescope git_commits<cr>')
 
 " keybind: telescope - git_bcommits
 call NormalVisual('<silent> <leader>gb', '<cmd>Telescope git_bcommits<cr>')
@@ -2514,4 +2514,16 @@ nnoremap <silent> <leader>rP <cmd>PlugUpgrade<cr><cmd>PlugInstall<cr><cmd>PlugUp
 
 " keybind: fugitive
 nnoremap <leader>gg :Git<space>
+
+" keybind: fugitive - add
+nnoremap <leader>ga :Git add<space>
+
+" keybind: fugitive - commit
+nnoremap <leader>gc :Git commit -m<space>
+
+" keybind: fugitive - push
+nnoremap <leader>gp :Git push <space>
+
+" keybind: fugitive - push origin
+nnoremap <leader>gp :Git push origin<space>
 
