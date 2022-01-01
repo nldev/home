@@ -2549,3 +2549,15 @@ nnoremap <leader>g; <cmd>call system('git add .')<cr><cmd>call system('git commi
 " keybind: fugitive - move
 nnoremap <leader>gm :Gmove<space>
 
+" keybind: fugitive - pull origin
+nnoremap <leader>guu <cmd>call system('git pull origin HEAD')<cr><cmd>GitGutter<cr>
+
+" keybind: fugitive - pull develop
+nnoremap <leader>gud <cmd>call system('git pull origin develop')<cr><cmd>GitGutter<cr>
+
+" keybind: fugitive - pull main
+nnoremap <leader>gum <cmd>call system('git pull origin main')<cr><cmd>GitGutter<cr>
+
+" keybind: fugitive - pull master
+nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>GitGutter<cr>
+
