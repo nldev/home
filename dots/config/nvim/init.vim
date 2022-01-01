@@ -92,6 +92,9 @@ Plug 'tpope/vim-unimpaired'
 " vim-fugitive
 Plug 'tpope/vim-fugitive'
 
+" vim-flog
+Plug 'rbong/vim-flog'
+
 " vim-searchlight
 Plug 'PeterRincker/vim-searchlight'
 
@@ -2566,4 +2569,10 @@ nnoremap <leader>gum <cmd>call system('git pull origin main')<cr><cmd>GitGutter<
 
 " keybind: fugitive - pull master
 nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>GitGutter<cr><cmd>echo 'git: pulled from master'<cr>
+
+" keybind: vim-flog
+nnoremap <leader>gr <cmd>Flog<cr>
+
+" keybind: vim-flog - split
+nnoremap <leader>gR <cmd>Flogsplit<cr>
 
