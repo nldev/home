@@ -2627,14 +2627,6 @@ nnoremap <leader>gS <cmd>call system('git stash --apply')<cr><cr><cmd>call Refre
 " keybind: fugitive - reset mixed
 nnoremap <leader>grr <cmd>call system('git reset --mixed HEAD~1')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: mixed reset to previous commit'<cr>
 
-
-
-
-
-
-
-
-
 " keybind: fugitive - reset soft
 nnoremap <leader>grs <cmd>call system('git reset --soft HEAD-1')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: soft reset to previous commit'<cr>
 
