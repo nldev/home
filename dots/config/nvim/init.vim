@@ -2639,6 +2639,11 @@ nnoremap <leader>gy :Git merge<space>
 " keybind: fugitive - dry merge 
 nnoremap <leader>gY :Git merge --no-commit --no-ff<space>
 
+
+
+
+
+
 " keybind: vim-flog
 nnoremap <leader>gf <cmd>Flog<cr>
 
