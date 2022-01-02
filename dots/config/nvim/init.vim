@@ -2446,8 +2446,8 @@ function! SaveBufferAsNote(shouldClose)
   endif
 endfunction
 
-nnoremap <silent> <leader>n; <cmd>call SaveBufferAsNote(0)<cr>
-nnoremap <silent> <leader>n: <cmd>call SaveBufferAsNote(1)<cr>
+nnoremap <silent> <leader>nz <cmd>call SaveBufferAsNote(0)<cr>
+nnoremap <silent> <leader>nZ <cmd>call SaveBufferAsNote(1)<cr>
 
 if g:os == 'Windows'
   call NormalVisual('<silent> <leader>nn', ':lua require"telescope.builtin".file_browser{ cwd = "~/sync/notes" }<cr>')
@@ -2456,7 +2456,7 @@ else
   nnoremap <leader>nn <cmd>lua require('telekasten').find_notes()<cr>
   nnoremap <leader>nd <cmd>lua require('telekasten').find_daily_notes()<cr>
   nnoremap <leader>ng <cmd>lua require('telekasten').search_notes()<cr>
-  nnoremap <leader>nz <cmd>lua require('telekasten').follow_link()<cr>
+  nnoremap <leader>n; <cmd>lua require('telekasten').follow_link()<cr>
   nnoremap <leader>nt <cmd>lua require('telekasten').goto_today()<cr>
   " nnoremap <leader>nW <cmd>lua require('telekasten').goto_thisweek()<cr>
   " nnoremap <leader>nw <cmd>lua require('telekasten').find_weekly_notes()<cr>
