@@ -2286,73 +2286,72 @@ nnoremap <silent> <leader>t; :lua terminal_send('build datascripts --client-only
 
 function! WoWNpcSearch()
   let l:query = Prompt('NPC search query')
-
-  execute 'OpenURL "https://wotlkdb.com/?npcs\&filter=na=' . substitute(l:query, " ", "%20", "") . '"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?npcs&filter=na=' . substitute(l:query, " ", "%20", "") . "'" . '"'
 endfunction
 
 function! WoWSpellSearch()
   let l:query = Prompt('Spell search query')
-  execute 'OpenURL "https://wotlkdb.com/?spells\&filter=na=' . substitute(l:query, " ", "%20", "") . '#0-4"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?spells&filter=na=' . substitute(l:query, " ", "%20", "") . '\#0-4' . "'" . '"'
 endfunction
 
 function! WoW60ItemSearch()
   let l:query = Prompt('Item search query')
-  execute 'OpenURL "https://wotlkdb.com/?items\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=60\#0+2' . "'" . '"'
 endfunction
 
 function! WoW60ConsumableSearch()
   let l:query = Prompt('Consumable search query')
-  execute 'OpenURL "https://wotlkdb.com/?items=0\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items=0&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=60\#0+2' . "'" . '"'
 endfunction
 
 function! WoW60ArmorSearch()
-  let l:query = Prompt('Armor search query')
-  execute 'OpenURL "https://wotlkdb.com/?items=4\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  let l:query = Prompt('Armor search querys')
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items=4&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=60\#0+2' . "'" . '"'
 endfunction
 
 function! WoW60WeaponSearch()
   let l:query = Prompt('Weapon search query')
-  execute 'OpenURL "https://wotlkdb.com/?items=2\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items=2&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=60\#0+2' . "'" . '"'
 endfunction
 
 function! WoW70ItemSearch()
   let l:query = Prompt('TBC item search query')
-  execute 'OpenURL "https://wotlkdb.com/?items\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=70\#0+2' . "'" . '"'
 endfunction
 
 function! WoW70ConsumableSearch()
   let l:query = Prompt('TBC consumable search query')
-  execute 'OpenURL "https://wotlkdb.com/?items=0\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items=0&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=70\#0+2' . "'" . '"'
 endfunction
 
 function! WoW70ArmorSearch()
   let l:query = Prompt('TBC armor search query')
-  execute 'OpenURL "https://wotlkdb.com/?items=4\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items=4&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=70\#0+2' . "'" . '"'
 endfunction
 
 function! WoW70WeaponSearch()
   let l:query = Prompt('TBC weapon search query')
-  execute 'OpenURL "https://wotlkdb.com/?items=2\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items=2&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=70\#0+2' . "'" . '"'
 endfunction
 
 function! WoW80ItemSearch()
   let l:query = Prompt('WOTLK item search query')
-  execute 'OpenURL "https://wotlkdb.com/?items\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=80\#0+2' . "'" . '"'
 endfunction
 
 function! WoW80ConsumableSearch()
   let l:query = Prompt('WOTLK consumable search query')
-  execute 'OpenURL "https://wotlkdb.com/?items=0\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items=0&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=80\#0+2' . "'" . '"'
 endfunction
 
 function! WoW80ArmorSearch()
   let l:query = Prompt('WOTLK armor search query')
-  execute 'OpenURL "https://wotlkdb.com/?items=4\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items=4&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=80\#0+2' . "'" . '"'
 endfunction
 
 function! WoW80WeaponSearch()
   let l:query = Prompt('WOTLK weapon search query')
-  execute 'OpenURL "https://wotlkdb.com/?items=2\&filter=na=' . substitute(l:query, " ", "%20", "") . '\;minle=1\;maxle=100\;minrl=1\;maxrl=60#0+2"'
+  execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?items=2&filter=na=' . substitute(l:query, " ", "%20", "") . ';minle=1;maxle=100;minrl=1;maxrl=80\#0+2' . "'" . '"'
 endfunction
 
 nnoremap <silent> <leader>tsn <cmd>call WoWNpcSearch()<cr>
@@ -2369,9 +2368,9 @@ nnoremap <silent> <leader>tsi <cmd>call WoW60ItemSearch()<cr>
 nnoremap <silent> <leader>tsw <cmd>call WoW60WeaponSearch()<cr>
 nnoremap <silent> <leader>tsa <cmd>call WoW60ArmorSearch()<cr>
 nnoremap <silent> <leader>tsc <cmd>call WoW60ConsumableSearch()<cr>
-vnoremap <silent> <leader>tsi y<cmd>execute 'OpenURL "https://wotlkdb.com/?item=' . @+ . '"'<cr>
-vnoremap <silent> <leader>tss y<cmd>execute 'OpenURL "https://wotlkdb.com/?spell=' . @+ . '"'<cr>
-vnoremap <silent> <leader>tsn y<cmd>execute 'OpenURL "https://wotlkdb.com/?npc=' . @+ . '"'<cr>
+vnoremap <silent> <leader>tsi y<cmd>execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?item=' . @+ . "'" . '"'<cr>
+vnoremap <silent> <leader>tss y<cmd>execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?spell=' . @+ . "'" . '"'<cr>
+vnoremap <silent> <leader>tsn y<cmd>execute '!pwsh.exe -c ' . '"Start-Process ' . "'" . 'https://wotlkdb.com/?npc=' . @+ . "'" . '"'<cr>
 
 " keybind: quickfix - toggle open
 nnoremap <silent> <leader>on <cmd>call ToggleList("Quickfix List", 'c')<cr>
