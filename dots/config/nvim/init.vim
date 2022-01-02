@@ -2463,12 +2463,14 @@ else
   nnoremap <leader>ni <cmd>lua require('telekasten').paste_img_and_link()<cr>
   nnoremap <leader>nf <cmd>lua require('telekasten').toggle_todo()<cr>
   nnoremap <leader>nF <cmd>lua require('telekasten').toggle_todo()<cr><cmd>lua require('telekasten').toggle_todo()<cr>
-  nnoremap <leader>nb <cmd>lua require('telekasten').show_backlinks()<cr>
+  nnoremap <leader>ns <cmd>lua require('telekasten').show_backlinks()<cr>
   nnoremap <leader>nN <cmd>lua require('telekasten').find_friends()<cr>
   nnoremap <leader>nI <cmd>lua require('telekasten').insert_img_link({ i=true })<cr>
   nnoremap <leader>np <cmd>lua require('telekasten').preview_img()<cr>
   nnoremap <leader>nm <cmd>lua require('telekasten').browse_media()<cr>
-  nnoremap <leader>na <cmd>lua require('telekasten').show_tags()<cr>
+  nnoremap <leader>ny <cmd>lua require('telekasten').show_tags()<cr>
+  nnoremap <leader>nt <cmd>lua require('telekasten').show_tags()<cr>
+  nnoremap <leader>na <cmd>lua require"telescope.builtin".live_grep{ cwd = "~/sync/notes" }<cr>
 
   " telekasten - on wait - bring up the panel
   nnoremap <leader>z :lua require('telekasten').panel()<cr>
@@ -2622,10 +2624,10 @@ nnoremap <leader>gum <cmd>call system('git pull origin main')<cr><cmd>call Refre
 nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: pulled from master'<cr>
 
 " keybind: fugitive - git stash
-nnoremap <leader>gs <cmd>call system('git stash')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: stashed'<cr><cmd>e<cr>
+nnoremap <leader>gz <cmd>call system('git stash')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: stashed'<cr><cmd>e<cr>
 
 " keybind: fugitive - git stash apply
-nnoremap <leader>gS <cmd>call system('git stash --apply')<cr><cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: applied stash'<cr><cmd>e<cr>
+nnoremap <leader>gZ <cmd>call system('git stash --apply')<cr><cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: applied stash'<cr><cmd>e<cr>
 
 " keybind: fugitive - reset mixed
 nnoremap <leader>grr <cmd>call system('git reset --mixed HEAD~1')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: mixed reset to previous commit'<cr>
