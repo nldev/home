@@ -1381,8 +1381,13 @@ EOF
 " nvim-web-devicons
 lua require'nvim-web-devicons'.setup{ default = true; }
 
+" octo.nvim
+lua << EOF
+require"octo".setup()
+EOF
+
 " telekasten
-lua << END
+lua << EOF
 local home = ''
 
 if (vim.g.os == 'Windows') then
@@ -1464,7 +1469,7 @@ require('telekasten').setup({
   -- instead of a [[title only]] link
   subdirs_in_links = true,
 })
-END
+EOF
 
 " neoscroll
 map <c-y> <nop>
