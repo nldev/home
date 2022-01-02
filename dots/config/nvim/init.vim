@@ -2499,8 +2499,8 @@ else
 endif
 nnoremap <silent> <leader>ir <cmd>FM<cr>
 
-" floaterm - open twitch
-function! OpenTwitch()
+" floaterm - open video
+function! OpenVideo()
   let l:vod = Prompt("Enter livestream or VOD URL")
   if l:vod != ''
    if g:os == 'Windows'
@@ -2510,7 +2510,7 @@ function! OpenTwitch()
     endif
   endif
 endfunction
-nnoremap <silent> <leader>it <cmd>call OpenTwitch()<cr>
+nnoremap <silent> <leader>iv <cmd>call OpenVideo()<cr>
 
 " save current file
 nnoremap <silent> <leader>l <cmd>w<cr>
