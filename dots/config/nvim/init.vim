@@ -2236,10 +2236,10 @@ xmap ga <plug>(EasyAlign)
 nmap ga <plug>(EasyAlign)
 
 " keybind: beacon
-nmap n n:Beacon<cr>
-nmap N N:Beacon<cr>
-nmap * *:Beacon<cr>
-nmap # #:Beacon<cr>
+nmap <silent> n n:Beacon<cr>
+nmap <silent> N N:Beacon<cr>
+nmap <silent> * *:Beacon<cr>
+nmap <silent> # #:Beacon<cr>
 
 " keybind: speeddating
 inoremap <c-s>d <esc>:SpeedDatingFormat<space>
