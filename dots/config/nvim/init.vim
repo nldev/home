@@ -169,7 +169,7 @@ Plug 'danilamihailov/beacon.nvim'
 Plug 'qpkorr/vim-bufkill'
 
 " dashboard
-Plug 'glepnir/dashboard-nvim'
+" Plug 'glepnir/dashboard-nvim'
 
 " nvim-tree
 Plug 'kyazdani42/nvim-tree.lua'
