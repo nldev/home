@@ -2625,18 +2625,13 @@ nnoremap <leader>gs <cmd>Git stash<cr><cmd>call RefreshScreen()<cr><cmd>echo 'gi
 nnoremap <leader>gS <cmd>Git stash --apply<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: stashed'<cr>
 
 " keybind: fugitive - reset mixed
-nnoremap <leader>grr <cmd>call system('git reset --mixed HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: mixed reset to previous commit'<cr>
+nnoremap <leader>grr <cmd>call system('git reset --mixed HEAD~1')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: mixed reset to previous commit'<cr>
 
 " keybind: fugitive - reset soft
-nnoremap <leader>grs <cmd>call system('git reset --soft HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: soft reset to previous commit'<cr>
+nnoremap <leader>grs <cmd>call system('git reset --soft HEAD-1')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: soft reset to previous commit'<cr>
 
 " keybind: fugitive - reset hard
-nnoremap <leader>grh <cmd>call system('git reset --hard HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: hard reset to previous commit'<cr>
-
-
-
-
-
+nnoremap <leader>grh <cmd>call system('git reset --hard HEAD~1')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: hard reset to previous commit'<cr>
 
 " keybind: fugitive: merge
 nnoremap <leader>gy :Git merge --no-commit --no-ff<space>
