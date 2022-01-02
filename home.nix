@@ -12,6 +12,7 @@ in
     packages = with pkgs; [
       gnumake
       gcc
+      tmux
       fzf
       lua
       dos2unix
