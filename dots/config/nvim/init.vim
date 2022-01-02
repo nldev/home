@@ -1735,6 +1735,7 @@ endfunction
 
 " default filetype
 if IsNewBuffer() == 1
+  cd /home/user/sync/notes
   if g:os == 'Windows'
     set filetype=markdown
   else
