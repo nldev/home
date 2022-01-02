@@ -2622,7 +2622,7 @@ nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>call Ref
 nnoremap <leader>gr <cmd>Git reset<cr>
 
 " keybind: fugitive: dry merge
-nnoremap <silent> <leader>gy :Git merge --no-commit --no-ff<space>
+nnoremap <leader>gy :Git merge --no-commit --no-ff<space>
 
 " keybind: vim-flog
 nnoremap <leader>gf <cmd>Flog<cr>
