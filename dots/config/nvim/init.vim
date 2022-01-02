@@ -394,10 +394,6 @@ let g:markdown_fenced_languages = [
   \ 'tsx=typescriptreact',
   \]
 
-" js: fix highlighting
-au BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-au BufLeave,WinLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
 " lualine
 lua << EOF
 require'lualine'.setup{
@@ -647,8 +643,8 @@ function! FullWindow ()
   endif
 endfunction
 
-au WinLeave * call MinimalWindow()
-au WinEnter * call FullWindow()
+" au WinLeave * call MinimalWindow()
+" au WinEnter * call FullWindow()
 
 " beacon
 let g:beacon_size = 40
