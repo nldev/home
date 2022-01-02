@@ -2606,6 +2606,9 @@ nnoremap <leader>g: <cmd>call system('git add .')<cr><cmd>call system('git commi
 " keybind: fugitive - move
 nnoremap <leader>gm :Gmove<space>
 
+" keybind: fugitive - reset from origin
+nnoremap <leader>gU <cmd>call system('git reset --hard HEAD~1')<cr><cmd>call system('git pull origin HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: reset to origin'<cr>
+
 " keybind: fugitive - pull origin
 nnoremap <leader>guu <cmd>call system('git pull origin HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: pulled from HEAD'<cr>
 
