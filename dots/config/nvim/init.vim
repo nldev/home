@@ -2667,3 +2667,6 @@ nnoremap <silent> <c-w>e <cmd>call OpenInNewTab()<cr>
 " keybind: save and close window
 nnoremap <c-w>Q <cmd>w<cr><cmd>wincmd q<cr>
 
+" keybind: close vim
+nnoremap <leader>Q <cmd>wqa!<cr>
+
