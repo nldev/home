@@ -2131,7 +2131,7 @@ au FileType Outline nnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>
 au FileType Outline vnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>
 au FileType NvimTree nnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>
 au FileType NvimTree vnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>
-au BufEnter * if IsPaneBuffer() == 1 | vnoremap <buffer> <silent> <leader>m <cmd>wincmd p| nnoremap <buffer> <silent> <leader>m <cmd>wincmd p| endif
+au BufEnter * if IsPaneBuffer() == 1 | vnoremap <buffer> <silent> <leader>m <cmd>wincmd p| nnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>| endif
 
 " keybind: scratch - toggle
 call NormalVisual("<leader>'", '<cmd>Scratch<cr>gg')
