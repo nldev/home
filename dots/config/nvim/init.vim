@@ -2618,8 +2618,25 @@ nnoremap <leader>gum <cmd>call system('git pull origin main')<cr><cmd>call Refre
 " keybind: fugitive - pull master
 nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: pulled from master'<cr>
 
-" keybind: fugitive - reset
-nnoremap <leader>gr <cmd>Git reset<cr>
+" keybind: fugitive - git stash
+nnoremap <leader>gs <cmd>Git stash<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: stashed'<cr>
+
+" keybind: fugitive - git stash
+nnoremap <leader>gS <cmd>Git stash --apply<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: stashed'<cr>
+
+" keybind: fugitive - reset mixed
+nnoremap <leader>grr <cmd>call system('git reset --mixed HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: mixed reset to previous commit'<cr>
+
+" keybind: fugitive - reset soft
+nnoremap <leader>grs <cmd>call system('git reset --soft HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: soft reset to previous commit'<cr>
+
+" keybind: fugitive - reset hard
+nnoremap <leader>grh <cmd>call system('git reset --hard HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: hard reset to previous commit'<cr>
+
+
+
+
+
 
 " keybind: fugitive: merge
 nnoremap <leader>gy :Git merge --no-commit --no-ff<space>
