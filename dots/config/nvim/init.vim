@@ -1346,8 +1346,22 @@ endif
 lua << EOF
 require('vgit').setup({
   keymaps = {
-    ['n <C-k>'] = 'hunk_up',
-    ['n <C-j>'] = 'hunk_down',
+    ['v <up>'] = 'hunk_up',
+    ['v <down>'] = 'hunk_down',
+    ['v <leader>gvs'] = 'buffer_hunk_stage',
+    ['v <leader>gvr'] = 'buffer_hunk_reset',
+    ['v <leader>gvp'] = 'buffer_hunk_preview',
+    ['v <leader>gvb'] = 'buffer_blame_preview',
+    ['v <leader>gvf'] = 'buffer_diff_preview',
+    ['v <leader>gvh'] = 'buffer_history_preview',
+    ['v <leader>gvu'] = 'buffer_reset',
+    ['v <leader>gvg'] = 'buffer_gutter_blame_preview',
+    ['v <leader>gvl'] = 'project_hunks_preview',
+    ['v <leader>gvd'] = 'project_diff_preview',
+    ['v <leader>gvq'] = 'project_hunks_qf',
+    ['v <leader>gvx'] = 'toggle_diff_preference',
+    ['n <up>'] = 'hunk_up',
+    ['n <down>'] = 'hunk_down',
     ['n <leader>gvs'] = 'buffer_hunk_stage',
     ['n <leader>gvr'] = 'buffer_hunk_reset',
     ['n <leader>gvp'] = 'buffer_hunk_preview',
@@ -2603,6 +2617,9 @@ nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>call Ref
 
 " keybind: fugitive - reset
 nnoremap <leader>gr <cmd>Git reset<cr>
+
+" keybind: fugitive: dry merge
+nnoremap <silent> <leader>gy <cmd>Git merge --no-commit --no-ff<space>
 
 " keybind: vim-flog
 nnoremap <leader>gf <cmd>Flog<cr>
