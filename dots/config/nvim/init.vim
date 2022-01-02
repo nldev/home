@@ -2113,54 +2113,8 @@ nnoremap <silent> <leader>ji <cmd>lua vim.lsp.buf.hover()<cr>
 " keybind: lsp - restart
 call NormalVisual('<silent> <leader>rl', ':LspRestart<cr>')
 
-" keybind: coc - info or autocomplete
-" nnoremap <silent> <m-j> :call ShowDocumentation()<cr>
-" vnoremap <silent> <m-j> :call ShowDocumentation()<cr>
-" inoremap <silent> <m-j> <cmd>call coc#refresh()<cr>
-
-" keybind: coc - show signature help
-" nnoremap <silent> <m-k> :call CocAction("showSignatureHelp")<cr>
-" vnoremap <silent> <m-k> :call CocAction("showSignatureHelp")<cr>
-" inoremap <silent> <m-k> :call CocAction("showSignatureHelp")<cr>
-"
-" " keybind: coc - rename symbol
-" nmap <silent> <leader>jl <Plug>(coc-rename)
-" vmap <silent> <leader>jl <Plug>(coc-rename)
-"
-" " keyboard: coc - previous / next diagnostic
-" nmap <silent> [g <Plug>(coc-diagnostic-prev)
-" nmap <silent> ]g <Plug>(coc-diagnostic-next)
-"
-" " keybind: coc - actions
-" nmap <silent> <leader>ja <Plug>(coc-codeaction-cursor)
-" vmap <silent> <leader>ja <Plug>(coc-codeaction-selected)
-"
-" " keybind: coc - show incoming calls
-" nmap <silent> <leader>ji :call CocAction("showIncomingCalls")<cr>
-" vmap <silent> <leader>ji :call CocAction("showIncomingCalls")<cr>
-"
-" " keybind: coc - show outgoing calls
-" nmap <silent> <leader>jo :call CocAction("showOutgoingCalls")<cr>
-" vmap <silent> <leader>jo :call CocAction("showOutgoingCalls")<cr>
-"
-" " keybind: coc - refactor
-" nmap <silent> <leader>jf :call CocAction("refactor")<cr>
-" vmap <silent> <leader>jf :call CocAction("refactor")<cr>
-"
-" " keybind: coc - fixall
-" nmap <silent> <leader>jv :call CocAction("fixAll")<cr>
-" vmap <silent> <leader>jv :call CocAction("fixall")<cr>
-"
-" " keybind: coc - format
-" nmap <silent> <leader>jy :call CocAction("format")<cr>
-" vmap <silent> <leader>jy :call CocAction("format")<cr>
-
 " keybind: vim-strip-trailing-whitespace
 call NormalVisual('<silent> <space>jw', '<cmd>StripTrailingWhitespace<cr>')
-" autocmd BufEnter * if (IsPaneBuffer() == 0) && (IsCodeBuffer() == 1) | silent! :StripTrailingWhitespace | endif
-
-" keybind: coc - commands
-" call NormalVisual('<silent> <leader>jc', ':CocCommand<cr>')
 
 " keybind: symbols-outline
 nmap <silent> <leader>jn <cmd>silent! SymbolsOutline<cr><c-w>p
