@@ -2509,6 +2509,9 @@ nnoremap <leader>ge <cmd>call system('git add .')<cr><cmd>call RefreshScreen()<c
 " keybind: fugitive - commit
 nnoremap <leader>gc :Git commit -m '
 
+" keybind: fugitive - amend commit
+nnoremap <leader>gC :Git commit --amend<cr>
+
 " keybind: fugitive - push
 nnoremap <leader>gp :Git push<space>
 
