@@ -2562,7 +2562,7 @@ nnoremap <leader>gg :Git<space>
 nnoremap <leader>ga :Git add<space>
 
 " keybind: fugitive - checkout branch
-nnoremap <leader>gd :Git checkout <space>
+nnoremap <leader>gd :Git checkout<space>
 
 " keybind: fugitive - create and checkout new branch
 nnoremap <leader>gD :Git checkout -b<space>
