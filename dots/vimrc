@@ -34,7 +34,7 @@ set hlsearch                   " highlight all search results
 set smartcase                  " enable smart-case search
 set ignorecase                 " always case-insensitive
 set incsearch                  " searches for strings incrementally
-  
+
 set autoindent                 " auto-indent new lines
 set expandtab                  " use spaces instead of tabs
 set shiftwidth=2               " number of auto-indent spaces
