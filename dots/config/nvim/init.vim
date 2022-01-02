@@ -2633,6 +2633,11 @@ nnoremap <leader>grs <cmd>call system('git reset --soft HEAD')<cr><cmd>call Refr
 " keybind: fugitive - reset hard
 nnoremap <leader>grh <cmd>call system('git reset --hard HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: hard reset to previous commit'<cr>
 
+
+
+
+
+
 " keybind: fugitive: merge
 nnoremap <leader>gy :Git merge --no-commit --no-ff<space>
 
