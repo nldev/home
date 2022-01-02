@@ -2433,7 +2433,7 @@ nnoremap <silent> <leader>osa <cmd>QFSaveList<cr>
 nnoremap <silent> <leader>osc <cmd>QFClearList<cr>
 
 " telekasten
-function! SaveBufferAsNote()
+function! SaveBufferAsNote(shouldClose)
   let l:name = Prompt('Save current buffer as note')
   if (l:name != '')
     execute 'w ~/sync/notes/' . l:name . '.md'
@@ -2441,9 +2441,14 @@ function! SaveBufferAsNote()
       set filetype=telekasten
     endif
   endif
+  if (a:shouldClose == 1)
+    wincmd q
+  endif
 endfunction
 
-nnoremap <silent> <leader>n; <cmd>call SaveBufferAsNote()<cr>
+nnoremap <silent> <leader>n; <cmd>call SaveBufferAsNote(0)<cr>
+nnoremap <silent> <leader>n: <cmd>call SaveBufferAsNote(1)<cr>
+
 if g:os == 'Windows'
   call NormalVisual('<silent> <leader>nn', ':lua require"telescope.builtin".file_browser{ cwd = "~/sync/notes" }<cr>')
   call NormalVisual('<silent> <leader>nc', ':call NewNote()')
@@ -2654,4 +2659,7 @@ function! OpenInNewTab()
   execute 'e ' . l:name
 endfunction
 nnoremap <silent> <c-w>e <cmd>call OpenInNewTab()<cr>
+
+" keybind: save and close window
+nnoremap <c-w>Q <cmd>w<cr><cmd>wincmd q<cr>
 
