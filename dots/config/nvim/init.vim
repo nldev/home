@@ -2565,8 +2565,14 @@ nnoremap <leader>gi <cmd>Git add --interactive<cr>
 " keybind: fugitive - commit WIP
 nnoremap <leader>gw <cmd>call system('git commit -m "WIP"')<cr><cmd>echo 'git: created WIP commit'<cr>
 
-" keybind: fugitive - quick add
+" keybind: fugitive - commit update
+nnoremap <leader>gW <cmd>call system('git commit -m "update"')<cr><cmd>echo 'git: created update commit'<cr>
+
+" keybind: fugitive - quick add WIP
 nnoremap <leader>g; <cmd>call system('git add .')<cr><cmd>call system('git commit -m "WIP"')<cr><cmd>call system('git push origin HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: pushed WIP commit to HEAD'<cr>
+
+" keybind: fugitive - quick add update
+nnoremap <leader>g: <cmd>call system('git add .')<cr><cmd>call system('git commit -m "update"')<cr><cmd>call system('git push origin HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: pushed update commit to HEAD'<cr>
 
 " keybind: fugitive - move
 nnoremap <leader>gm :Gmove<space>
