@@ -1814,7 +1814,7 @@ call NormalVisual('<leader>rr', ':source $MYVIMRC<cr><cmd>noh<cr>')
 " keybind: open empty buffer
 call NormalVisual('<silent> <leader>e', '<cmd>call CreateEmptyBuffer()<cr>')
 
-" keybind: clear search highlighting
+" keybind: clear screen
 call NormalVisual('<silent> <leader>c', '<cmd>checktime<cr><cmd>noh<cr>:echo<cr>:<backspace>')
 
 " keybind: refresh screen
