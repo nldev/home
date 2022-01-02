@@ -222,9 +222,6 @@ Plug 'tanvirtin/vgit.nvim'
 " octo
 Plug 'pwntester/octo.nvim'
 
-" vim-gitgutter
-Plug 'airblade/vim-gitgutter'
-
 " vim-devicons
 Plug 'ryanoasis/vim-devicons'
 
@@ -1736,6 +1733,15 @@ function! NormalVisual(keys, rhs) abort
     execute 'vnoremap' a:keys a:rhs
 endfunction
 
+" default filetype
+if IsNewBuffer() == 1
+  if g:os == 'Windows'
+    set filetype=markdown
+  else
+    set filetype=telekasten
+  endif
+endif
+
 " save and close
 function! SaveClose() abort
   if (&filetype == 'neoterm')
@@ -1815,7 +1821,6 @@ EOF
 
 " refresh screen
 function! RefreshScreen ()
-  :GitGutter
   wincmd p
   wincmd p
   if (IsCodeBuffer() == 1) && (bufname('%') != '__Scratch__')

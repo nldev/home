@@ -29,6 +29,7 @@ in
       gh
       bat
       sqlite
+      zellij
       (import neuron {name = "neuron";})
     ];
 
