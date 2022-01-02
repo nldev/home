@@ -427,7 +427,8 @@ function! CreateEmptyBuffer()
   if g:os == 'windows'
     set filetype=markdown
   else
-    set filetype=telekasten
+    " set filetype=telekasten
+    set filetype=markdown
   endif
   " let l:date = strftime('%H%M%S')
   " execute 'file ' . l:date
