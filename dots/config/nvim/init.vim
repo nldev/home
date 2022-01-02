@@ -1752,6 +1752,8 @@ EOF
 " refresh screen
 function! RefreshScreen ()
   :GitGutter
+  wincmd p
+  wincmd p
   if (IsCodeBuffer() == 1) && (bufname('%') != '__Scratch__')
     wincmd s
     call CreateEmptyBuffer()
@@ -2129,11 +2131,11 @@ au FileType Outline nnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>
 au FileType Outline vnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>
 au FileType NvimTree nnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>
 au FileType NvimTree vnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>
-au BufEnter * if IsPaneBuffer() == 1 | vnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>| nnoremap <buffer> <silent> <leader>m <cmd>wincmd p<cr>| endif
+au BufEnter * if IsPaneBuffer() == 1 | vnoremap <buffer> <silent> <leader>m <cmd>wincmd p| nnoremap <buffer> <silent> <leader>m <cmd>wincmd p| endif
 
 " keybind: scratch - toggle
 call NormalVisual("<leader>'", '<cmd>Scratch<cr>gg')
-au FileType markdown,telekasten silent! if IsScratchBuffer() == 1 | vnoremap <buffer> <silent> <leader>' <cmd>p<cr>| nnoremap <buffer> <silent> <leader>' <c-w>p<cr>| endif
+au FileType markdown,telekasten silent! if IsScratchBuffer() == 1 | vnoremap <buffer> <silent> <leader>' <cmd>p| nnoremap <buffer> <silent> <leader>' <c-w>p| endif
 
 " keybind: scratch - disable window movement
 au FileType markdown,telekasten silent! if IsScratchBuffer() == 1 | nnoremap <buffer> <silent> <c-j> <c-w>p | nnoremap <buffer> <silent> <c-k> <c-w>p | nnoremap <buffer> <silent> <c-h> <c-w>p | nnoremap <buffer> <silent> <c-l> <c-w>p | endif
