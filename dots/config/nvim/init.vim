@@ -620,7 +620,7 @@ EOF
 " nvim-colorizer
 lua require'colorizer'.setup()
 
-" indent_blankline
+" indent-blankline
 lua << EOF
 require'indent_blankline'.setup{
   show_current_context = true,
@@ -629,6 +629,26 @@ require'indent_blankline'.setup{
 EOF
 let g:indent_blankline_filetype_exclude = ['help', 'terminal', 'neoterm', 'Outline', 'NvimTree', 'dashboard']
 let g:indent_blankline_buftype_exclude = ['terminal']
+
+" minimal window
+function! MinimalWindow ()
+    set nonu
+    set nornu
+    set signcolumn=no
+    IndentBlanklineDisable
+endfunction
+
+function! FullWindow ()
+  if IsCodeBuffer() == 1
+    set nu
+    set rnu
+    set signcolumn=yes
+    IndentBlanklineEnable
+  endif
+endfunction
+
+au WinLeave * call MinimalWindow()
+au WinEnter * call FullWindow()
 
 " beacon
 let g:beacon_size = 40
