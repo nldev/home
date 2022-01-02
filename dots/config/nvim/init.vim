@@ -2512,8 +2512,14 @@ nnoremap <leader>gc :Git commit -m '
 " keybind: fugitive - push
 nnoremap <leader>gp :Git push<space>
 
+" keybind: fugitive - force push
+nnoremap <leader>gP :Git push --force<space>
+
 " keybind: fugitive - push origin
 nnoremap <leader>go <cmd>call system('git push origin HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: pushed to HEAD'<cr>
+
+" keybind: fugitive - force push origin
+nnoremap <leader>gO <cmd>call system('git push --force origin HEAD')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: force pushed to HEAD'<cr>
 
 " keybind: fugitive - interactive add
 nnoremap <leader>gi <cmd>Git add --interactive<cr>
