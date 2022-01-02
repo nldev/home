@@ -2636,10 +2636,8 @@ nnoremap <leader>grh <cmd>call system('git reset --hard HEAD~1')<cr><cmd>call Re
 " keybind: fugitive - merge
 nnoremap <leader>gy :Git merge<space>
 
-
-
-
-
+" keybind: fugitive - dry merge 
+nnoremap <leader>gY :Git merge --no-commit --no-ff<space>
 
 " keybind: vim-flog
 nnoremap <leader>gf <cmd>Flog<cr>
