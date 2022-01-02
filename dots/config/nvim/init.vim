@@ -2465,7 +2465,6 @@ else
   nnoremap <leader>ny <cmd>lua require('telekasten').yank_notelink()<cr>
   nnoremap <leader>nx <cmd>lua require('telekasten').show_calendar()<cr>
   nnoremap <leader>nX <cmd>CalendarT<cr>
-  nnoremap <leader>nv <cmd>e ~/sync/notes/index.md<cr>
   nnoremap <leader>ni <cmd>lua require('telekasten').paste_img_and_link()<cr>
   nnoremap <leader>nf <cmd>lua require('telekasten').toggle_todo()<cr>
   nnoremap <leader>nF <cmd>lua require('telekasten').toggle_todo()<cr><cmd>lua require('telekasten').toggle_todo()<cr>
@@ -2477,6 +2476,7 @@ else
   nnoremap <leader>ny <cmd>lua require('telekasten').show_tags()<cr>
   nnoremap <leader>nt <cmd>lua require('telekasten').show_tags()<cr>
   nnoremap <leader>na <cmd>lua require"telescope.builtin".live_grep{ cwd = "~/sync/notes" }<cr>
+  nnoremap <leader>nvv <cmd>e ~/sync/notes/index.md<cr>
   nnoremap <leader>N :lua require('telekasten').panel()<cr>
 
   " telekasten - insert mode
