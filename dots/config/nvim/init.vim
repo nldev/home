@@ -216,6 +216,9 @@ if g:os == 'Windows'
   Plug 'nvim-telescope/telescope-frecency.nvim'
 endif
 
+" vgit
+Plug 'tanvirtin/vgit.nvim'
+
 " vim-gitgutter
 Plug 'airblade/vim-gitgutter'
 
@@ -2505,10 +2508,13 @@ nnoremap <leader>rt :TabooRename<space>
 nnoremap <silent> <leader>rT <cmd>TabooReset<cr>
 
 " keybind: plug - reload
-nnoremap <silent> <leader>rp <cmd>PlugInstall<cr><cmd>PlugUpdate<cr>
+nnoremap <silent> <leader>rp <cmd>PlugInstall<cr>
+
+" keybind: plug - update
+nnoremap <silent> <leader>rP <cmd>PlugUpdate<cr>
 
 " keybind: plug - upgrade
-nnoremap <silent> <leader>rP <cmd>PlugUpgrade<cr><cmd>PlugInstall<cr><cmd>PlugUpdate<cr>
+nnoremap <silent> <leader>r0 <cmd>PlugUpgrade<cr>
 
 " keybind: fugitive
 nnoremap <leader>gg :Git<space>
