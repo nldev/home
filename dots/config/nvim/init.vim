@@ -219,6 +219,9 @@ endif
 " vgit
 Plug 'tanvirtin/vgit.nvim'
 
+" octo
+Plug 'pwntester/octo.nvim'
+
 " vim-gitgutter
 Plug 'airblade/vim-gitgutter'
 
@@ -1338,6 +1341,28 @@ lua << EOF
   }
 EOF
 endif
+
+" vgit
+lua << EOF
+require('vgit').setup({
+  keymaps = {
+    ['n <C-k>'] = 'hunk_up',
+    ['n <C-j>'] = 'hunk_down',
+    ['n <leader>gvs'] = 'buffer_hunk_stage',
+    ['n <leader>gvr'] = 'buffer_hunk_reset',
+    ['n <leader>gvp'] = 'buffer_hunk_preview',
+    ['n <leader>gvb'] = 'buffer_blame_preview',
+    ['n <leader>gvf'] = 'buffer_diff_preview',
+    ['n <leader>gvh'] = 'buffer_history_preview',
+    ['n <leader>gvu'] = 'buffer_reset',
+    ['n <leader>gvg'] = 'buffer_gutter_blame_preview',
+    ['n <leader>gvl'] = 'project_hunks_preview',
+    ['n <leader>gvd'] = 'project_diff_preview',
+    ['n <leader>gvq'] = 'project_hunks_qf',
+    ['n <leader>gvx'] = 'toggle_diff_preference',
+  }
+})
+EOF
 
 " nvim-web-devicons
 lua require'nvim-web-devicons'.setup{ default = true; }
@@ -2584,4 +2609,12 @@ nnoremap <leader>gf <cmd>Flog<cr>
 
 " keybind: vim-flog - split
 nnoremap <leader>gF <cmd>Flogsplit<cr>
+
+" keybind: open file in new tab
+function! OpenInNewTab()
+  let l:name = bufname()
+  tabnew
+  execute 'e ' . l:name
+endfunction
+nnoremap <silent> <c-w>e <cmd>call OpenInNewTab()<cr>
 
