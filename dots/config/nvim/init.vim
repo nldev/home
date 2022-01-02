@@ -2619,10 +2619,10 @@ nnoremap <leader>gum <cmd>call system('git pull origin main')<cr><cmd>call Refre
 nnoremap <leader>guM <cmd>call system('git pull origin master')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: pulled from master'<cr>
 
 " keybind: fugitive - git stash
-nnoremap <leader>gs <cmd>call system('git stash')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: stashed'<cr>
+nnoremap <leader>gs <cmd>call system('git stash')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: stashed'<cr><cmd>e<cr>
 
 " keybind: fugitive - git stash apply
-nnoremap <leader>gS <cmd>call system('git stash --apply')<cr><cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: applied stash'<cr>
+nnoremap <leader>gS <cmd>call system('git stash --apply')<cr><cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: applied stash'<cr><cmd>e<cr>
 
 " keybind: fugitive - reset mixed
 nnoremap <leader>grr <cmd>call system('git reset --mixed HEAD~1')<cr><cmd>call RefreshScreen()<cr><cmd>echo 'git: mixed reset to previous commit'<cr>
