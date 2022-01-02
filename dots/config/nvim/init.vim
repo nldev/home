@@ -2476,9 +2476,7 @@ else
   nnoremap <leader>ny <cmd>lua require('telekasten').show_tags()<cr>
   nnoremap <leader>nt <cmd>lua require('telekasten').show_tags()<cr>
   nnoremap <leader>na <cmd>lua require"telescope.builtin".live_grep{ cwd = "~/sync/notes" }<cr>
-
-  " telekasten - on wait - bring up the panel
-  nnoremap <leader>z :lua require('telekasten').panel()<cr>
+  nnoremap <leader>N :lua require('telekasten').panel()<cr>
 
   " telekasten - insert mode
   inoremap [[ <cmd>:lua require('telekasten').insert_link{ i=true }<cr>
