@@ -86,5 +86,6 @@ in
   home.file.".config/nvim/coc-settings.json".source = ./dots/config/nvim/coc-settings.json;
   home.file.".config/nvim/autoload/plug.vim".source = ./dots/config/nvim/autoload/plug.vim;
   home.file.".vimrc".source = ./dots/vimrc;
+  home.file.".tmux.conf".source = ./dots/tmux.conf;
 }
 
