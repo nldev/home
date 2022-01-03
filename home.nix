@@ -30,7 +30,7 @@ in
       gh
       bat
       sqlite
-      zellij
+      tmux
       (import neuron {name = "neuron";})
     ];
 

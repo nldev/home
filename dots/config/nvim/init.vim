@@ -1735,7 +1735,7 @@ endfunction
 
 " default filetype
 if IsNewBuffer() == 1
-  cd /home/user/sync/notes
+  cd ~
   if g:os == 'Windows'
     set filetype=markdown
   else
@@ -2496,18 +2496,18 @@ else
   inoremap <c-z># <cmd>lua require('telekasten').show_tags{i = true}<cr>
 endif
 
-au FileType telekasten cd /home/user/sync/notes
+au FileType telekasten cd ~/sync/notes
 
 " bufferize
 nnoremap <leader>: :Bufferize<space>
 
 " floaterm - ranger
 if g:os == 'Windows'
-  command FM FloatermNew --height=0.6 --width=0.6 --wintype=float --position=center --autoclose=2 wsl ranger --cmd="cd ~"
+  command FR FloatermNew --height=0.6 --width=0.6 --wintype=float --position=center --autoclose=2 wsl ranger --cmd="cd ~"
 else
-  command FM FloatermNew --height=0.6 --width=0.6 --wintype=float --position=center --autoclose=2 ranger --cmd="cd ~"
+  command FR FloatermNew --height=0.6 --width=0.6 --wintype=float --position=center --autoclose=2 ranger --cmd="cd ~"
 endif
-nnoremap <silent> <leader>ir <cmd>FM<cr>
+nnoremap <silent> <leader>ir <cmd>FR<cr>
 
 " floaterm - open video
 function! OpenVideo()
