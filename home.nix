@@ -20,6 +20,7 @@ in
       ranger
       vim
       neovim
+      ffmpeg-full
       ripgrep
       python27
       python310
