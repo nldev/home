@@ -1615,6 +1615,27 @@ function! IsNormalBuffer() abort
   return 1
 endfunction
 
+" is lsp buffer
+function! IsLspBuffer() abort
+  if (&filetype == 'javascript')
+    return 1
+  endif
+
+  if (&filetype == 'typescript')
+    return 1
+  endif
+
+  if (&filetype == 'javascriptreact')
+    return 1
+  endif
+
+  if (&filetype == 'typescriptreact')
+    return 1
+  endif
+
+  return 0
+endfunction
+
 " is code buffer
 function! IsCodeBuffer() abort
   if (&filetype == 'python')
@@ -1763,7 +1784,7 @@ endfunction
 
 " symbol or doc search
 function! DocSearch() abort
-  if IsCodeBuffer()
+  if IsLspBuffer()
     lua require"telescope.builtin".lsp_document_symbols{ path_display = {"tail"} }
   else
     lua require"telescope.builtin".current_buffer_fuzzy_find{ path_display = {"tail"} }
