@@ -53,7 +53,7 @@ in
     enable = true;
     loginShellInit = "
       alias n \"nvr -s\"
-      alias w \"nvr -s\"
+      alias s \"pwsh.exe\"
       alias a \"tmux new -A -s main\"
     ";
     # bind \\cd 'clear; commandline -f repaint'
