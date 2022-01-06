@@ -1633,6 +1633,14 @@ function! IsLspBuffer() abort
     return 1
   endif
 
+  " if (&filetype == 'markdown')
+  "   return 1
+  " endif
+
+  " if (&filetype == 'telekasten')
+  "   return 1
+  " endif
+
   return 0
 endfunction
 

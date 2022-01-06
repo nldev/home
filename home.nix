@@ -56,6 +56,7 @@ in
       alias s \"sudo\"
       alias p \"pwsh.exe\"
       alias a \"tmux new -A -s main\"
+      alias c \"cd\"
     ";
     plugins = [
       {
