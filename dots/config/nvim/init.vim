@@ -1273,7 +1273,7 @@ require'nvim-tree'.setup{
         { key = "K",                            cb = tree_cb("first_sibling") },
         { key = "J",                            cb = tree_cb("last_sibling") },
         { key = "I",                            cb = tree_cb("toggle_ignored") },
-        { key = "<c-h>",                            cb = tree_cb("toggle_dotfiles") },
+        { key = "<c-h>",                        cb = tree_cb("toggle_dotfiles") },
         { key = "~",                            cb = tree_cb("refresh") },
         { key = "a",                            cb = tree_cb("create") },
         { key = "d",                            cb = tree_cb("remove") },
