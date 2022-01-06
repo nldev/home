@@ -2670,6 +2670,9 @@ function! OpenInNewTab()
 endfunction
 nnoremap <silent> <c-w>e <cmd>call OpenInNewTab()<cr>
 
+" keybind: close window
+nnoremap <silent> <F6> <c-w>q<cr>
+
 " keybind: save and close window
 nnoremap <c-w>Q <cmd>w<cr><cmd>wincmd q<cr>
 
