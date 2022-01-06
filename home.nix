@@ -53,10 +53,10 @@ in
     enable = true;
     loginShellInit = "
       alias n \"nvr -s\"
-      alias s \"pwsh.exe\"
+      alias s \"sudo\"
+      alias p \"pwsh.exe\"
       alias a \"tmux new -A -s main\"
     ";
-    # bind \\cd 'clear; commandline -f repaint'
     plugins = [
       {
         name = "z";
