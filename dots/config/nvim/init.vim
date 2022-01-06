@@ -2706,3 +2706,13 @@ nnoremap <leader>W <cmd>wqa!<cr>
 " keybind: close vim
 nnoremap <leader>Q <cmd>qa!<cr>
 
+" keybind: mobile mode
+function! EnableMobileControls ()
+  nmap ; :
+  imap ;; <esc>
+  let g:mobile_mode = 1
+  echo "mobile controls activated"
+endfunction
+
+nnoremap <leader>ki <cmd>call EnableMobileControls()<cr>
+
