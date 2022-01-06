@@ -49,9 +49,9 @@ in
   # fish
   programs.fish = {
     enable = true;
-    loginShellInit = "
-      bind \\cd 'clear; commandline -f repaint'
-    ";
+    # loginShellInit = "
+    #   bind \\cd 'clear; commandline -f repaint'
+    # ";
     plugins = [
       {
         name = "z";
