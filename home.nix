@@ -20,6 +20,7 @@ in
       ranger
       vim
       neovim
+      neovim-remote
       ffmpeg-full
       ripgrep
       python27
@@ -50,9 +51,12 @@ in
   # fish
   programs.fish = {
     enable = true;
-    # loginShellInit = "
-    #   bind \\cd 'clear; commandline -f repaint'
-    # ";
+    loginShellInit = "
+      alias n \"nvr -s\"
+      alias w \"nvr -s\"
+      alias a \"tmux new -A -s main\"
+    ";
+    # bind \\cd 'clear; commandline -f repaint'
     plugins = [
       {
         name = "z";
