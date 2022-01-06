@@ -49,7 +49,19 @@ in
   # fish
   programs.fish = {
     enable = true;
+    loginShellInit = "
+      bind \\cd 'clear; commandline -f repaint'
+    ";
     plugins = [
+      {
+        name = "z";
+        src = pkgs.fetchFromGitHub {
+          owner = "jethrokuan";
+          repo = "z";
+          rev = "ddeb28a7b6a1f0ec6dae40c636e5ca4908ad160a";
+          sha256 = "0c5i7sdrsp0q3vbziqzdyqn4fmp235ax4mn4zslrswvn8g3fvdyh";
+        };
+      }
       {
         name = "fasd";
         src = pkgs.fetchFromGitHub {
@@ -60,6 +72,12 @@ in
         };
       }
     ];
+  };
+
+  # fzf
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
   };
 
   # git

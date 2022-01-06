@@ -1917,7 +1917,7 @@ call NormalVisual('<silent> <leader>C', '<cmd>call RefreshScreen()<cr><cmd>NvimT
 call NormalVisual('<silent> <m-e>', ':tabnew<cr>')
 
 " keybind: close tab
-call NormalVisual('<silent> <c-q>', ':tabclose<cr>')
+call NormalVisual('<silent> <m-r>', ':tabclose<cr>')
 
 " keybind: move to left tab
 call NormalVisual('<silent> <m-q>', ':tabprev<cr>')
@@ -1933,6 +1933,9 @@ call NormalVisual('<silent> <m-o>', ':bn<cr>')
 
 " keybind: escape terminal
 tnoremap <silent> <c-a> <c-\><c-n>
+
+" keybind: clear terminal
+tnoremap <silent> <c-d> <c-l>
 
 " keybind: write and close vim
 nnoremap <leader>qw :wqa!<cr>
@@ -2692,7 +2695,7 @@ endfunction
 nnoremap <silent> <c-w>e <cmd>call OpenInNewTab()<cr>
 
 " keybind: close window
-nnoremap <silent> <F6> <c-w>q<cr>
+nnoremap <silent> <F9> <c-w>q<cr>
 
 " keybind: save and close window
 nnoremap <c-w>Q <cmd>w<cr><cmd>wincmd q<cr>
