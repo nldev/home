@@ -27,6 +27,7 @@ in
       nodejs-17_x
       powershell
       dotnet-aspnetcore
+      neofetch
       gh
       bat
       sqlite

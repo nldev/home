@@ -2581,6 +2581,14 @@ else
 endif
 nnoremap <silent> <leader>rs <cmd>FS<cr>
 
+" switch upgrade nix
+if g:os == 'Windows'
+  command FU FloatermNew --height=0.6 --width=0.6 --wintype=float --position=center --autoclose=2 wsl nix-channel --update && wsl home-manager switch
+else
+  command FU FloatermNew --height=0.6 --width=0.6 --wintype=float --position=center --autoclose=2 nix-channel --update && home-manager switch
+endif
+nnoremap <silent> <leader>ru <cmd>FU<cr>
+
 " keybind: taboo - rename
 nnoremap <leader>rt :TabooRename<space>
 
