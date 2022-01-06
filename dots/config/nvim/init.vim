@@ -1783,7 +1783,9 @@ function! SaveClose() abort
       if IsNewBuffer() == 1
         write `=tempname()`
       else
-        write
+        if &modifiable && IsNormalBuffer()
+          write
+        endif
       endif
     endif
     BUN!
