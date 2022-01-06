@@ -52,7 +52,7 @@ in
   programs.fish = {
     enable = true;
     loginShellInit = "
-      alias n \"nvr -s\"
+      alias e \"nvr -s\"
       alias s \"sudo\"
       alias p \"pwsh.exe\"
       alias a \"tmux new -A -s main\"
