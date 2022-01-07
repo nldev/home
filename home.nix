@@ -52,11 +52,14 @@ in
   programs.fish = {
     enable = true;
     loginShellInit = "
+      set -U fish_greeting \"🐟 blub 。。。\"
+
       alias e \"nvr -s\"
       alias s \"sudo\"
       alias p \"pwsh.exe\"
       alias a \"tmux new -A -s main\"
       alias c \"cd\"
+      alias g \"git\"
     ";
     plugins = [
       {
