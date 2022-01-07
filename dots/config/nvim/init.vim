@@ -2560,7 +2560,7 @@ nnoremap <silent> <leader>iv <cmd>call OpenVideo()<cr>
 nnoremap <silent> <leader>l <cmd>w<cr>
 
 " center current window
-nnoremap <silent> <leader>k; <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>wincmd =<cr><cmd>wincmd l<cr><cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>wincmd h<cr><cmd>wincmd =<cr>
+nnoremap <silent> <c-w>; <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>wincmd =<cr><cmd>wincmd l<cr><cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>wincmd h<cr><cmd>wincmd =<cr>
 
 " edit config
 if g:os == 'Windows'
