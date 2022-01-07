@@ -2710,6 +2710,7 @@ function! OpenInNewTab()
   tabnew
   execute 'e ' . l:name
 endfunction
+
 nnoremap <silent> <c-w>e <cmd>call OpenInNewTab()<cr>
 
 " keybind: close window
