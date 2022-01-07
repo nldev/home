@@ -57,7 +57,7 @@ in
       alias e \"nvr -s\"
       alias s \"sudo\"
       alias p \"pwsh.exe\"
-      alias a \"tmux new -A -s main\"
+      alias a \"cd ~ && tmux new -A -s main\"
       alias c \"cd\"
       alias g \"git\"
     ";
@@ -87,16 +87,6 @@ in
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
-    settings = {
-      # add_newline = false;
-
-      # character = {
-      #   success_symbol = "[➜](bold green)";
-      #   error_symbol = "[➜](bold red)";
-      # };
-
-      # package.disabled = true;
-    };
   };
 
   # fzf
