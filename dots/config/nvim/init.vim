@@ -2597,7 +2597,7 @@ if g:os == 'Windows'
 else
   command FU FloatermNew --height=0.6 --width=0.6 --wintype=float --position=center --autoclose=2 nix-channel --update && home-manager switch
 endif
-nnoremap <silent> <leader>ru <cmd>FU<cr>
+nnoremap <silent> <leader>rS <cmd>FU<cr>
 
 " keybind: taboo - rename
 nnoremap <leader>rt :TabooRename<space>

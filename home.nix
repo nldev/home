@@ -54,7 +54,10 @@ in
     loginShellInit = "
       set -U fish_greeting \"🐟 blub 。。。\"
 
-      alias e \"nvr -s\"
+      bind \\cd 'clear; commandline -f repaint'
+
+      alias e \"nvr --servername /tmp/nvr -s\"
+      alias v \"NVIM_LISTEN_ADDRESS=/tmp/nvr nvim\"
       alias s \"sudo\"
       alias p \"pwsh.exe\"
       alias a \"cd ~ && tmux new -A -s main\"
