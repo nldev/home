@@ -87,6 +87,10 @@ in
       alias f \"nnn -a\"
       alias i \"home-manager switch\"
       alias u \"nix-channel --update && home-manager switch\"
+
+      export NNN_OPENER=\"wslopen\"
+
+      fish_add_path -m ~/sync/bin
     ";
     plugins = [
       {

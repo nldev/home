@@ -2741,5 +2741,6 @@ endfunction
 nnoremap <leader>ki <cmd>call EnableMobileControls()<cr>
 
 " keybind: toggle semicolon
+nnoremap <silent> <leader>, <cmd>call ToggleEndChar(',')<cr>
 nnoremap <silent> <leader>. <cmd>call ToggleEndChar(';')<cr>
 
