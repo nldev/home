@@ -10,29 +10,50 @@ in
 {
   home = {
     packages = with pkgs; [
+      # system
+      coreutils
       gnumake
       gcc
-      fzf
+
+      # git
+      git
+      gh
+
+      # languages
       lua
-      dos2unix
-      fasd
-      nnn
-      ranger
-      vim
-      neovim
-      neovim-remote
-      ffmpeg-full
-      ripgrep
       python27
       python310
       nodejs-17_x
       powershell
       dotnet-aspnetcore
-      neofetch
-      gh
-      bat
+
+      # dependencies
+      fzf
+      fasd
       sqlite
+      ripgrep
+      ffmpeg-full
+
+      # programs
       tmux
+      vim
+      neovim
+      neovim-remote
+      ranger
+
+      # utilities
+      lsix
+      exa
+      dos2unix
+      lynx
+      unzip
+      mediainfo
+      mktemp
+      atool
+      trash-cli
+      viu
+      bat
+      neofetch
       (import neuron {name = "neuron";})
     ];
 
@@ -63,6 +84,9 @@ in
       alias a \"cd ~ && tmux new -A -s main\"
       alias c \"cd\"
       alias g \"git\"
+      alias f \"nnn -a\"
+      alias i \"home-manager switch\"
+      alias u \"nix-channel --update && home-manager switch\"
     ";
     plugins = [
       {
@@ -117,6 +141,32 @@ in
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+  };
+
+  # nnn
+  programs.nnn = {
+    enable = true;
+    # bookmarks = {
+    #  d = "~/Documents";
+    #  D = "~/Downloads";
+    #  p = "~/Pictures";
+    #  v = "~/Videos";
+    # };
+    #package = pkgs.nnnDummy;
+    #extraPackages = with pkgs; [ foo bar ];
+    plugins = {
+      # src = ./plugins;
+      mappings = {
+        o = "fzopen";
+        j = "jump";
+        p = "preview-tui";
+        t = "preview-tabbed";
+        c = "fzcd";
+        f = "finder";
+        i = "imgview";
+        v = "vidthumb";
+      };
+    };
   };
 
   # dotfiles
