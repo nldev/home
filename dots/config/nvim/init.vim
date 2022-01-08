@@ -1826,6 +1826,11 @@ function! CloseAllBuffersButCurrent() abort
   call winrestview(l:view)
 endfunction
 
+" toggle end of line character
+function! ToggleEndChar(charToMatch)
+  s/\v(.)$/\=submatch(1)==a:charToMatch ? '' : submatch(1).a:charToMatch
+endfunction
+
 " send to terminal
 lua << EOF
 function get_first_terminal()
@@ -2734,4 +2739,7 @@ function! EnableMobileControls ()
 endfunction
 
 nnoremap <leader>ki <cmd>call EnableMobileControls()<cr>
+
+" keybind: toggle semicolon
+nnoremap <silent> <leader>. <cmd>call ToggleEndChar(';')<cr>
 
