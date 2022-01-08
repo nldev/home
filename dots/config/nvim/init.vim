@@ -257,7 +257,7 @@ Plug 'simrat39/symbols-outline.nvim'
 call plug#end()
 
 "disable keys
-map <c-s> <nop>
+map <c-x> <nop>
 map <c-g> <nop>
 map <up> <nop>
 map <down> <nop>
@@ -1902,19 +1902,19 @@ endif
 " call NormalVisual('<silent> <m-a>', '<cmd>Tnew<cr>i')
 
 " keybind: toggle wrap
-call NormalVisual('<silent> <c-s>w', ':set wrap!<cr>')
+call NormalVisual('<silent> <c-x>w', ':set wrap!<cr>')
 
 " keybind: toggle relative line numbers
-call NormalVisual('<silent> <c-s>r', ':set rnu!<cr>')
+call NormalVisual('<silent> <c-x>r', ':set rnu!<cr>')
 
 " keybind: toggle line numbers
-call NormalVisual('<silent> <c-s>n', ':set nu!<cr>')
+call NormalVisual('<silent> <c-x>n', ':set nu!<cr>')
 
 " keybind: toggle cursorline
-call NormalVisual('<silent> <c-s>l', ':set cursorline!<cr>')
+call NormalVisual('<silent> <c-x>l', ':set cursorline!<cr>')
 
 " keybind: toggle columnline
-call NormalVisual('<silent> <c-s>c', ':set cursorcolumn!<cr>')
+call NormalVisual('<silent> <c-x>c', ':set cursorcolumn!<cr>')
 
 " keybind: reload config
 call NormalVisual('<leader>rr', ':source $MYVIMRC<cr><cmd>noh<cr>')
@@ -1950,7 +1950,7 @@ call NormalVisual('<silent> <m-o>', ':bn<cr>')
 tnoremap <silent> <c-a> <c-\><c-n>
 
 " keybind: clear terminal
-tnoremap <silent> <c-d> <c-l>
+tnoremap <silent> <c-x> <c-l>
 
 " keybind: write and close vim
 nnoremap <leader>qw :wqa!<cr>
@@ -1968,29 +1968,29 @@ nnoremap <silent> <leader>qq :call SaveClose()<cr>
 nnoremap <leader>qe :call DeleteEmptyBuffers()<cr>
 
 " keybind: insert id
-inoremap <silent> <c-s>i <c-r>=strftime("%Y%m%d%H%M%S")<cr>
-nnoremap <silent> <c-s>i "=strftime("%Y%m%d%H%M%S")<cr>p
-vnoremap <silent> <c-s>i "=strftime("%Y%m%d%H%M%S")<cr>p
+inoremap <silent> <c-x>i <c-r>=strftime("%Y%m%d%H%M%S")<cr>
+nnoremap <silent> <c-x>i "=strftime("%Y%m%d%H%M%S")<cr>p
+vnoremap <silent> <c-x>i "=strftime("%Y%m%d%H%M%S")<cr>p
 
 " keybind: insert id with suffix
-inoremap <silent> <c-s>I <c-r>=strftime("%Y%m%d%H%M%S-")<cr>
-nnoremap <silent> <c-s>I "=strftime("%Y%m%d%H%M%S-")<cr>p
-vnoremap <silent> <c-s>I "=strftime("%Y%m%d%H%M%S-")<cr>p
+inoremap <silent> <c-x>I <c-r>=strftime("%Y%m%d%H%M%S-")<cr>
+nnoremap <silent> <c-x>I "=strftime("%Y%m%d%H%M%S-")<cr>p
+vnoremap <silent> <c-x>I "=strftime("%Y%m%d%H%M%S-")<cr>p
 
 " keybind: insert short timestamp
-inoremap <silent> <c-s>s <c-r>=strftime("%T")<cr>
-nnoremap <silent> <c-s>s "=strftime("%T")<cr>p
-vnoremap <silent> <c-s>s "=strftime("%T")<cr>p
+inoremap <silent> <c-x>s <c-r>=strftime("%T")<cr>
+nnoremap <silent> <c-x>s "=strftime("%T")<cr>p
+vnoremap <silent> <c-x>s "=strftime("%T")<cr>p
 
 " keybind: insert full timestamp
-inoremap <silent> <c-s>S <c-r>=strftime("%Y-%m-%d %T")<cr>
-nnoremap <silent> <c-s>S "=strftime("%Y-%m-%d %T")<cr>p
-vnoremap <silent> <c-s>S "=strftime("%Y-%m-%d %T")<cr>p
+inoremap <silent> <c-x>S <c-r>=strftime("%Y-%m-%d %T")<cr>
+nnoremap <silent> <c-x>S "=strftime("%Y-%m-%d %T")<cr>p
+vnoremap <silent> <c-x>S "=strftime("%Y-%m-%d %T")<cr>p
 
 " keybind: insert iso-8601 timestamp
-inoremap <silent> <c-s>8 <c-r>=strftime("%FT%T%z")<cr>
-nnoremap <silent> <c-s>8 "=strftime("%FT%T%z")<cr>p
-vnoremap <silent> <c-s>8 "=strftime("%FT%T%z")<cr>p
+inoremap <silent> <c-x>8 <c-r>=strftime("%FT%T%z")<cr>
+nnoremap <silent> <c-x>8 "=strftime("%FT%T%z")<cr>p
+vnoremap <silent> <c-x>8 "=strftime("%FT%T%z")<cr>p
 
 " keybind: panels
 nnoremap <silent> <leader>9 <cmd>NvimTreeRefresh<cr><cmd>NvimTreeToggle<cr><c-w>p
@@ -2281,9 +2281,9 @@ nmap <silent> * *:Beacon<cr>
 nmap <silent> # #:Beacon<cr>
 
 " keybind: speeddating
-inoremap <c-s>d <esc>:SpeedDatingFormat<space>
-nnoremap <c-s>d :SpeedDatingFormat<space>
-vnoremap <c-s>d :SpeedDatingFormat<space>
+inoremap <c-x>d <esc>:SpeedDatingFormat<space>
+nnoremap <c-x>d :SpeedDatingFormat<space>
+vnoremap <c-x>d :SpeedDatingFormat<space>
 
 " keybind: choosewin
 nmap <silent> <leader>; <plug>(choosewin)

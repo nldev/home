@@ -75,7 +75,7 @@ in
     loginShellInit = "
       set -U fish_greeting \"🐟 blub 。。。\"
 
-      bind \\cd 'clear; commandline -f repaint'
+      bind \\cs 'clear; commandline -f repaint'
 
       alias e \"nvr --servername /tmp/nvr -s\"
       alias v \"NVIM_LISTEN_ADDRESS=/tmp/nvr nvim\"
