@@ -256,7 +256,8 @@ Plug 'simrat39/symbols-outline.nvim'
 " Plug 'jparise/vim-graphql'
 call plug#end()
 
-"disable keys
+" disable keys
+map <c-s> <nop>
 map <c-x> <nop>
 map <c-g> <nop>
 map <up> <nop>
@@ -411,7 +412,7 @@ EOF
 lua << EOF
 require('bqf').setup({
   func_map = {
-    split = '<c-s>',
+    -- split = '<c-s>',
     pscrollup = '<c-u>',
     pscrolldown = '<c-d>'
   },
@@ -1949,9 +1950,6 @@ call NormalVisual('<silent> <m-o>', ':bn<cr>')
 " keybind: escape terminal
 tnoremap <silent> <c-a> <c-\><c-n>
 
-" keybind: clear terminal
-tnoremap <silent> <c-x> <c-l>
-
 " keybind: write and close vim
 nnoremap <leader>qw :wqa!<cr>
 
@@ -2743,4 +2741,13 @@ nnoremap <leader>ki <cmd>call EnableMobileControls()<cr>
 " keybind: toggle semicolon
 nnoremap <silent> <leader>, <cmd>call ToggleEndChar(',')<cr>
 nnoremap <silent> <leader>. <cmd>call ToggleEndChar(';')<cr>
+
+" keybind: terminal movement
+tnoremap <silent> <c-h> <cmd>wincmd h<cr>
+tnoremap <silent> <c-j> <cmd>wincmd j<cr>
+tnoremap <silent> <c-k> <cmd>wincmd k<cr>
+tnoremap <silent> <c-l> <cmd>wincmd l<cr>
+
+" keybind: close window
+nnoremap <silent> <m-x> <cmd>wincmd q<cr>
 

@@ -72,7 +72,7 @@ in
   # fish
   programs.fish = {
     enable = true;
-    loginShellInit = "
+    shellInit = "
       set -U fish_greeting \"🐟 blub 。。。\"
 
       bind \\cs 'clear; commandline -f repaint'
