@@ -1950,6 +1950,9 @@ call NormalVisual('<silent> <m-o>', ':bn<cr>')
 " keybind: escape terminal
 tnoremap <silent> <c-a> <c-\><c-n>
 
+" keybind: clear terminal
+nnoremap <silent> <c-s> <cmd>Tclear<cr>
+
 " keybind: write and close vim
 nnoremap <leader>qw :wqa!<cr>
 
