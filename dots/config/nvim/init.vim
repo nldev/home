@@ -243,8 +243,8 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'p00f/nvim-ts-rainbow'
 
-" symbols-outline
-Plug 'simrat39/symbols-outline.nvim'
+" aerial
+Plug 'stevearc/aerial.nvim'
 
 " js
 " Plug 'pangloss/vim-javascript'
@@ -561,61 +561,23 @@ _G.QFListPicker = function(opts)
 end
 EOF
 
-" symbols-outline
+" aerial
 lua << EOF
-vim.g.symbols_outline = {
-  highlight_hovered_item = true,
-  show_guides = true,
-  auto_preview = true,
-  position = 'right',
-  relative_width = false,
-  -- width = 25,
-  -- auto_close = false,
-  -- show_numbers = true,
-  -- show_relative_numbers = true,
-  show_symbol_details = true,
-  preview_bg_highlight = 'Pmenu',
-  -- keymaps = {
-  --   close = {"<Esc>", "q"},
-  --   goto_location = "<Cr>",
-  --   focus_location = "o",
-  --   hover_symbol = "<C-space>",
-  --   toggle_preview = "K",
-  --   rename_symbol = "r",
-  --   code_actions = "a",
-  -- },
-  lsp_blacklist = {},
-  symbol_blacklist = {},
-  -- symbols = {
-  --   File = {icon = "", hl = "TSURI"},
-  --   Module = {icon = "", hl = "TSNamespace"},
-  --   Namespace = {icon = "", hl = "TSNamespace"},
-  --   Package = {icon = "", hl = "TSNamespace"},
-  --   Class = {icon = "𝓒", hl = "TSType"},
-  --   Method = {icon = "ƒ", hl = "TSMethod"},
-  --   Property = {icon = "", hl = "TSMethod"},
-  --   Field = {icon = "", hl = "TSField"},
-  --   Constructor = {icon = "", hl = "TSConstructor"},
-  --   Enum = {icon = "ℰ", hl = "TSType"},
-  --   -- Interface = {icon = "", hl = "TSType"},
-  --   Interface = {icon = "ﰮ", hl = "TSType"},
-  --   Function = {icon = "λ", hl = "TSFunction"},
-  --   Variable = {icon = "", hl = "TSConstant"},
-  --   Constant = {icon = "", hl = "TSConstant"},
-  --   String = {icon = "𝓐", hl = "TSString"},
-  --   Number = {icon = "#", hl = "TSNumber"},
-  --   Boolean = {icon = "⊨", hl = "TSBoolean"},
-  --   Array = {icon = "", hl = "TSConstant"},
-  --   Object = {icon = "⦿", hl = "TSType"},
-  --   Key = {icon = "🔐", hl = "TSType"},
-  --   Null = {icon = "NULL", hl = "TSType"},
-  --   EnumMember = {icon = "", hl = "TSField"},
-  --   Struct = {icon = "𝓢", hl = "TSType"},
-  --   Event = {icon = "🗲", hl = "TSType"},
-  --   Operator = {icon = "+", hl = "TSOperator"},
-  --   TypeParameter = {icon = "𝙏", hl = "TSParameter"}
-  -- }
+require("lspconfig").vimls.setup{
+  on_attach = require("aerial").on_attach,
 }
+require("aerial").setup({
+  on_attach = function(bufnr)
+    -- Toggle the aerial window with <leader>a
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>0', '<cmd>AerialToggle!<CR>', {})
+    -- Jump forwards/backwards with '{' and '}'
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
+    -- Jump up the tree with '[[' or ']]'
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrevUp<CR>', {})
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', ']]', '<cmd>AerialNextUp<CR>', {})
+  end
+})
 EOF
 
 " nvim-colorizer
@@ -1995,7 +1957,7 @@ vnoremap <silent> <c-x>8 "=strftime("%FT%T%z")<cr>p
 
 " keybind: panels
 nnoremap <silent> <leader>9 <cmd>NvimTreeRefresh<cr><cmd>NvimTreeToggle<cr><c-w>p
-nnoremap <silent> <leader>0 <cmd>SymbolsOutline<cr><c-w>p
+" nnoremap <silent> <leader>0 <cmd>SymbolsOutline<cr><c-w>p
 
 " keybind: telescope - files
 call NormalVisual('<silent> <leader>f', ':call TelescopeFind()<cr>')
@@ -2229,8 +2191,8 @@ call NormalVisual('<silent> <leader>rl', ':LspRestart<cr>')
 call NormalVisual('<silent> <space>jw', '<cmd>StripTrailingWhitespace<cr>')
 
 " keybind: symbols-outline
-nmap <silent> <leader>jn <cmd>silent! SymbolsOutline<cr><c-w>p
-vnoremap <silent> <leader>jn <cmd>silent! SymbolsOutline<cr><c-w>p
+" nmap <silent> <leader>jn <cmd>silent! SymbolsOutline<cr><c-w>p
+" vnoremap <silent> <leader>jn <cmd>silent! SymbolsOutline<cr><c-w>p
 
 " keybind: nvim-tree - refresh
 call NormalVisual('<silent> <leader>r9', ':NvimTreeRefresh<cr>')
