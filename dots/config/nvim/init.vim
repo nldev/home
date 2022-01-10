@@ -2695,8 +2695,8 @@ nnoremap <leader>Q <cmd>qa!<cr>
 
 " keybind: mobile mode
 function! EnableMobileControls ()
-  nmap ; :
-  imap ;; <esc>
+  map ; :
+  map ;; <esc>
   let g:mobile_mode = 1
   echo "mobile controls activated"
 endfunction

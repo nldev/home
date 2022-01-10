@@ -79,17 +79,17 @@ in
 
       bind \\cs 'clear; commandline -f repaint'
 
-      alias e \"nvr --servername /tmp/nvr -s\"
-      alias v \"NVIM_LISTEN_ADDRESS=/tmp/nvr nvim\"
-      alias w \"pwsh.exe -c nvim\"
-      alias s \"sudo\"
-      alias p \"pwsh.exe\"
-      alias a \"cd ~ && tmux new -A -s main\"
-      alias c \"cd\"
-      alias g \"git\"
-      alias f \"nnn -a\"
-      alias i \"home-manager switch\"
-      alias u \"nix-channel --update && home-manager switch\"
+      abbr e \"nvr --servername /tmp/nvr -s\"
+      abbr v \"NVIM_LISTEN_ADDRESS=/tmp/nvr nvim\"
+      abbr w \"pwsh.exe -c nvim\"
+      abbr s \"sudo\"
+      abbr p \"pwsh.exe\"
+      abbr a \"cd ~ && tmux new -A -s main\"
+      abbr c \"cd\"
+      abbr g \"git\"
+      abbr f \"nnn -a\"
+      abbr i \"home-manager switch\"
+      abbr u \"nix-channel --update && home-manager switch\"
 
       export NNN_OPENER=\"wslopen\"
 
