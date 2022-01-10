@@ -39,6 +39,8 @@ in
       vim
       neovim
       neovim-remote
+      taskwarrior
+      timewarrior
       ranger
 
       # utilities
@@ -79,6 +81,7 @@ in
 
       alias e \"nvr --servername /tmp/nvr -s\"
       alias v \"NVIM_LISTEN_ADDRESS=/tmp/nvr nvim\"
+      alias w \"pwsh.exe -c nvim\"
       alias s \"sudo\"
       alias p \"pwsh.exe\"
       alias a \"cd ~ && tmux new -A -s main\"
