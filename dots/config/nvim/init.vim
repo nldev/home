@@ -2539,9 +2539,9 @@ endif
 
 " windows copy config
 if g:os == 'Windows'
-  nnoremap <silent> <leader>rw <cmd>!wsl cp ~/.config/nixpkgs/dots/config/nvim/init.vim /mnt/c/Users/Administrator/AppData/Local/nvim/init.vim<cr>
+  nnoremap <silent> <leader>rw <cmd>!wsl cp ~/.config/nixpkgs/dots/config/nvim/init.vim /mnt/c/Users/Administrator/AppData/Local/nvim/init.vim && wsl cp ~/.config/nixpkgs/dots/vimrc /mnt/c/Users/Administrator/.vimrc<cr>
 else
-  nnoremap <silent> <leader>rw <cmd>!cp ~/.config/nixpkgs/dots/config/nvim/init.vim /mnt/c/Users/Administrator/AppData/Local/nvim/init.vim<cr>
+  nnoremap <silent> <leader>rw <cmd>!cp ~/.config/nixpkgs/dots/config/nvim/init.vim /mnt/c/Users/Administrator/AppData/Local/nvim/init.vim && cp ~/.config/nixpkgs/dots/vimrc /mnt/c/Users/Administrator/.vimrc<cr>
 endif
 
 " edit nix
