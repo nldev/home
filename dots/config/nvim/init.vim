@@ -2776,3 +2776,6 @@ nnoremap <silent> <c-w>9v <cmd>vertical resize 90<cr>
 " keybind: easy window balance
 nnoremap <silent> <c-w><space> <cmd>wincmd =<cr>
 
+" keybind: easy visual exit
+vnoremap <silent> q <esc>
+
