@@ -74,6 +74,7 @@ in
   # fish
   programs.fish = {
     enable = true;
+    # TODO automatically duplicate abbreviations as aliases via function
     shellInit = "
       set -U fish_greeting \"🐟 blub 。。。\"
 
@@ -82,7 +83,6 @@ in
       alias d \"cd\"
       alias e \"nvr --servername /tmp/nvr -s\"
       alias s \"sudo\"
-
       alias z \"timew\"
       alias t \"task\"
       alias td \"task del\"
@@ -93,13 +93,11 @@ in
       alias wn \"pwsh.exe -c nvim\"
       alias wv \"pwsh.exe -c vim\"
       alias wh \"pwsh.exe --wd 'C:\\Users\\Administrator'\"
-
       alias z \"timew\"
       alias t \"task\"
       alias td \"task del\"
       alias tn \"task add\"
       alias n \"task add\"
-
       alias v \"NVIM_LISTEN_ADDRESS=/tmp/nvr nvim\"
       alias a \"cd ~ && tmux new -A -s main\"
       alias h \"cd ~\"
