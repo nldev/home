@@ -35,6 +35,7 @@ in
       ffmpeg-full
 
       # programs
+      mosh
       tmux
       vim
       neovim
@@ -100,6 +101,9 @@ in
       alias n \"task add\"
       alias v \"NVIM_LISTEN_ADDRESS=/tmp/nvr nvim\"
       alias a \"cd ~ && tmux new -A -s main\"
+      alias b \"cd ~ && tmux new -A -s mobile\"
+      alias ad \"tmux kill-session -t main\"
+      alias bd \"tmux kill-session -t mobile\"
       alias h \"cd ~\"
       alias g \"git\"
       alias f \"nnn -a\"
