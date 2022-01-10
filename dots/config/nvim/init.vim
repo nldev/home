@@ -295,7 +295,7 @@ set timeoutlen=500             " set key sequence timeout
 set ttimeoutlen=0              " remove key code delay
 set updatetime=1000             " set update delay
 
-set scrolloff=8                " always keep cursor 8 lines from boundary
+set scrolloff=0                " always keep cursor 8 lines from boundary
 set fillchars=""               " remove unnecessary chars in separators
 set clipboard+=unnamedplus     " add unnamed register to clipboard
 set wildmenu                   " improve command-line completion
