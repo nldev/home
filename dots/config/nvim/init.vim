@@ -2717,7 +2717,7 @@ tnoremap <silent> <c-l> <cmd>wincmd l<cr>
 " keybind: close window
 nnoremap <silent> <m-x> <cmd>wincmd q<cr>
 
-" keybind: create resized pane
+" keybind: easy window sizing
 nnoremap <silent> <c-w>1h <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 10<cr>
 nnoremap <silent> <c-w>1j <cmd>wincmd s<cr><cmd>wincmd j<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 10<cr>
 nnoremap <silent> <c-w>1k <cmd>wincmd s<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 10<cr>
@@ -2754,7 +2754,25 @@ nnoremap <silent> <c-w>9h <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd
 nnoremap <silent> <c-w>9j <cmd>wincmd s<cr><cmd>wincmd j<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 90<cr>
 nnoremap <silent> <c-w>9k <cmd>wincmd s<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 90<cr>
 nnoremap <silent> <c-w>9l <cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 90<cr>
+nnoremap <silent> <c-w>1s <cmd>resize 10<cr>
+nnoremap <silent> <c-w>1v <cmd>vertical resize 10<cr>
+nnoremap <silent> <c-w>2s <cmd>resize 20<cr>
+nnoremap <silent> <c-w>2v <cmd>vertical resize 20<cr>
+nnoremap <silent> <c-w>3s <cmd>resize 30<cr>
+nnoremap <silent> <c-w>3v <cmd>vertical resize 30<cr>
+nnoremap <silent> <c-w>4s <cmd>resize 40<cr>
+nnoremap <silent> <c-w>4v <cmd>vertical resize 40<cr>
+nnoremap <silent> <c-w>5s <cmd>resize 50<cr>
+nnoremap <silent> <c-w>5v <cmd>vertical resize 50<cr>
+nnoremap <silent> <c-w>6s <cmd>resize 60<cr>
+nnoremap <silent> <c-w>6v <cmd>vertical resize 60<cr>
+nnoremap <silent> <c-w>7s <cmd>resize 70<cr>
+nnoremap <silent> <c-w>7v <cmd>vertical resize 70<cr>
+nnoremap <silent> <c-w>8s <cmd>resize 80<cr>
+nnoremap <silent> <c-w>8v <cmd>vertical resize 80<cr>
+nnoremap <silent> <c-w>9s <cmd>resize 90<cr>
+nnoremap <silent> <c-w>9v <cmd>vertical resize 90<cr>
 
-" keybind: easy balance
+" keybind: easy window balance
 nnoremap <silent> <c-w><space> <cmd>wincmd =<cr>
 
