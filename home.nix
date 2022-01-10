@@ -81,6 +81,7 @@ in
 
       abbr e \"nvr --servername /tmp/nvr -s\"
       abbr w \"pwsh.exe\"
+      abbr c \"pwsh.exe -c\"
       abbr wn \"pwsh.exe -c nvim\"
       abbr wv \"pwsh.exe -c vim\"
       abbr h \"pwsh.exe --wd 'C:\\Users\\Administrator'\"
