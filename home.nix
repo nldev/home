@@ -35,7 +35,6 @@ in
       ffmpeg-full
 
       # programs
-      mosh
       tmux
       vim
       neovim
