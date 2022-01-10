@@ -84,7 +84,7 @@ in
 
       alias v \"NVIM_LISTEN_ADDRESS=/tmp/nvr nvim\"
       alias s \"sudo\"
-      alias p \"pwsh.exe --wd 'C:\\Users\\Administrator'\"
+      alias h \"pwsh.exe --wd 'C:\\Users\\Administrator'\"
       alias a \"cd ~ && tmux new -A -s main\"
       alias c \"cd\"
       alias g \"git\"
