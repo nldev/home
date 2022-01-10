@@ -80,11 +80,13 @@ in
       bind \\cs 'clear; commandline -f repaint'
 
       abbr e \"nvr --servername /tmp/nvr -s\"
-      abbr w \"pwsh.exe -c nvim\"
+      abbr w \"pwsh.exe\"
+      abbr wn \"pwsh.exe -c nvim\"
+      abbr wv \"pwsh.exe -c vim\"
+      abbr h \"pwsh.exe --wd 'C:\\Users\\Administrator'\"
 
       alias v \"NVIM_LISTEN_ADDRESS=/tmp/nvr nvim\"
       alias s \"sudo\"
-      alias h \"pwsh.exe --wd 'C:\\Users\\Administrator'\"
       alias a \"cd ~ && tmux new -A -s main\"
       alias c \"cd\"
       alias g \"git\"
