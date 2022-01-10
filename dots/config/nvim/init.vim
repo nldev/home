@@ -329,6 +329,7 @@ set noshowcmd                  " do not show the current command
 set showmode                   " show the current mode
 set hidden                     " don't remove hidden buffers
 set switchbuf+=useopen         " prefer to switch buffer to already open window
+set noequalalways              " never automatically balance windows
 
 set mouse=a                    " enable mouse support in all modes
 
@@ -2715,4 +2716,45 @@ tnoremap <silent> <c-l> <cmd>wincmd l<cr>
 
 " keybind: close window
 nnoremap <silent> <m-x> <cmd>wincmd q<cr>
+
+" keybind: create resized pane
+nnoremap <silent> <c-w>1h <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 10<cr>
+nnoremap <silent> <c-w>1j <cmd>wincmd s<cr><cmd>wincmd j<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 10<cr>
+nnoremap <silent> <c-w>1k <cmd>wincmd s<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 10<cr>
+nnoremap <silent> <c-w>1l <cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 10<cr>
+nnoremap <silent> <c-w>2h <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 20<cr>
+nnoremap <silent> <c-w>2j <cmd>wincmd s<cr><cmd>wincmd j<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 20<cr>
+nnoremap <silent> <c-w>2k <cmd>wincmd s<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 20<cr>
+nnoremap <silent> <c-w>2l <cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 20<cr>
+nnoremap <silent> <c-w>3h <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 30<cr>
+nnoremap <silent> <c-w>3j <cmd>wincmd s<cr><cmd>wincmd j<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 30<cr>
+nnoremap <silent> <c-w>3k <cmd>wincmd s<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 30<cr>
+nnoremap <silent> <c-w>3l <cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 30<cr>
+nnoremap <silent> <c-w>4h <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 40<cr>
+nnoremap <silent> <c-w>4j <cmd>wincmd s<cr><cmd>wincmd j<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 40<cr>
+nnoremap <silent> <c-w>4k <cmd>wincmd s<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 40<cr>
+nnoremap <silent> <c-w>4l <cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 40<cr>
+nnoremap <silent> <c-w>5h <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 50<cr>
+nnoremap <silent> <c-w>5j <cmd>wincmd s<cr><cmd>wincmd j<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 50<cr>
+nnoremap <silent> <c-w>5k <cmd>wincmd s<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 50<cr>
+nnoremap <silent> <c-w>5l <cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 50<cr>
+nnoremap <silent> <c-w>6h <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 60<cr>
+nnoremap <silent> <c-w>6j <cmd>wincmd s<cr><cmd>wincmd j<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 60<cr>
+nnoremap <silent> <c-w>6k <cmd>wincmd s<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 60<cr>
+nnoremap <silent> <c-w>6l <cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 60<cr>
+nnoremap <silent> <c-w>7h <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 70<cr>
+nnoremap <silent> <c-w>7j <cmd>wincmd s<cr><cmd>wincmd j<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 70<cr>
+nnoremap <silent> <c-w>7k <cmd>wincmd s<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 70<cr>
+nnoremap <silent> <c-w>7l <cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 70<cr>
+nnoremap <silent> <c-w>8h <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 80<cr>
+nnoremap <silent> <c-w>8j <cmd>wincmd s<cr><cmd>wincmd j<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 80<cr>
+nnoremap <silent> <c-w>8k <cmd>wincmd s<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 80<cr>
+nnoremap <silent> <c-w>8l <cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 80<cr>
+nnoremap <silent> <c-w>9h <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 90<cr>
+nnoremap <silent> <c-w>9j <cmd>wincmd s<cr><cmd>wincmd j<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 90<cr>
+nnoremap <silent> <c-w>9k <cmd>wincmd s<cr><cmd>call CreateEmptyBuffer()<cr><cmd>resize 90<cr>
+nnoremap <silent> <c-w>9l <cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>vertical resize 90<cr>
+
+" keybind: easy balance
+nnoremap <silent> <c-w><space> <cmd>wincmd =<cr>
 
