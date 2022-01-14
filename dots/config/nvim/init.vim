@@ -1477,7 +1477,6 @@ function! NewNote()
   if name != ''
     let date = strftime("%Y%m%d%H%M%S")
     execute 'e ~/sync/notes/' . name . '.md'
-    write
   endif
 endfunction
 
