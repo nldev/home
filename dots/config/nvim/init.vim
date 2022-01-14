@@ -2465,7 +2465,7 @@ nnoremap <silent> <leader>nZ <cmd>call SaveBufferAsNote(1)<cr>
 
 if g:os == 'Windows'
   call NormalVisual('<silent> <leader>nn', ':lua require"telescope.builtin".file_browser{ cwd = "~/sync/notes" }<cr>')
-  call NormalVisual('<silent> <leader>nc', ':call NewNote()')
+  call NormalVisual('<silent> <leader>nc', ':call NewNote()<cr>')
 else
   nnoremap <leader>nn <cmd>lua require('telekasten').find_notes()<cr>
   nnoremap <leader>nd <cmd>lua require('telekasten').find_daily_notes()<cr>
