@@ -246,14 +246,11 @@ Plug 'p00f/nvim-ts-rainbow'
 " aerial
 Plug 'stevearc/aerial.nvim'
 
-" js
-" Plug 'pangloss/vim-javascript'
-" Plug 'leafgarland/typescript-vim'
-" Plug 'peitalin/vim-jsx-typescript'
-" Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" ale
+Plug 'dense-analysis/ale'
 
-" graphql
-" Plug 'jparise/vim-graphql'
+" js
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 call plug#end()
 
 " disable keys
@@ -393,11 +390,19 @@ autocmd BufEnter * checktime
 
 " markdown
 let g:markdown_fenced_languages = [
+  \ 'help',
+  \ 'vim',
   \ 'js=javascript',
   \ 'ts=typescript',
   \ 'jsx=javascriptreact',
   \ 'tsx=typescriptreact',
   \]
+
+" ale
+let b:ale_linters = ['eslint']
+let g:ale_completion_enabled = 1
+let g:ale_completion_autoimport = 1
+let b:ale_fixers = ['eslint']
 
 " lualine
 lua << EOF
