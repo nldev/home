@@ -2446,6 +2446,8 @@ nnoremap <silent> <leader>osa <cmd>QFSaveList<cr>
 nnoremap <silent> <leader>osc <cmd>QFClearList<cr>
 
 " telekasten
+au FileType telekasten cd ~/sync/notes
+
 function! SaveBufferAsNote(shouldClose)
   let l:name = Prompt('Save current buffer as note')
   if (l:name != '')
@@ -2497,8 +2499,6 @@ else
   inoremap <c-z>t <cmd>:lua require('telekasten').toggle_todo{ i=true }<cr>
   inoremap <c-z># <cmd>lua require('telekasten').show_tags{i = true}<cr>
 endif
-
-au FileType telekasten cd ~/sync/notes
 
 " bufferize
 nnoremap <leader>: :Bufferize<space>
