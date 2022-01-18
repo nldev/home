@@ -2360,7 +2360,7 @@ nnoremap <silent> <leader>tl :lua terminal_send('build livescripts\r\n')<cr>
 nnoremap <silent> <leader>ta :lua terminal_send('build addon\r\n')<cr>
 nnoremap <silent> <leader>tr :lua terminal_send('start realm\r\n')<cr>
 nnoremap <silent> <leader>tc :lua terminal_send('start client\r\n')<cr>
-nnoremap <silent> <leader>t; :lua terminal_send('build datascripts --client-only\r\n')<cr>
+nnoremap <silent> <leader>t; :lua terminal_send('build datascripts --no-restart\r\n')<cr>
 
 function! WoWNpcSearch()
   let l:query = Prompt('NPC search query')
