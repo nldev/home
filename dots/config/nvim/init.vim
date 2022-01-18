@@ -141,10 +141,10 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
 " vim-ultest
-if g:os != 'Windows'
-Plug 'vim-test/vim-test'
-Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
-endif
+" if g:os != 'Windows'
+" Plug 'vim-test/vim-test'
+" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+" endif
 
 " choosewin
 Plug 't9md/vim-choosewin'
@@ -247,7 +247,7 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'stevearc/aerial.nvim'
 
 " ale
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
 " js
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -399,9 +399,11 @@ let g:markdown_fenced_languages = [
   \]
 
 " ale
-let b:ale_linters = ['eslint']
-let g:ale_completion_autoimport = 1
-let b:ale_fixers = ['eslint']
+" let b:ale_linters = ['eslint']
+" let g:ale_completion_autoimport = 1
+" let b:ale_fixers = ['eslint']
+" let b:ale_lint_on_enter = 0
+" let b:ale_lint_on_filetype_changed = 1
 
 " lualine
 lua << EOF
@@ -688,13 +690,6 @@ require'nvim-treesitter.configs'.setup{
 -- require'tree-sitter-typescript'.tsx{}
 EOF
 set foldexpr=nvim_treesitter#foldexpr()
-" 4
-" 6
-" 1
-" 3
-" 5
-" 7
-" 2
 hi rainbowcol4 guifg=#55B4D4
 hi rainbowcol6 guifg=#A37ACC
 hi rainbowcol1 guifg=#FFCC66
@@ -1310,40 +1305,40 @@ require'nvim-tree'.setup{
 EOF
 
 " vim-ultest
-if g:os != 'Windows'
-let g:ultest_use_pty = 1
-let g:ultest_virtual_text = 1
-let g:test#javascript#runner = "jest"
-let g:test#typescript#runner = "jest"
-let test#strategy = "terminal"
-lua << EOF
-  function fn (cmd)
-    return {
-      dap = {
-        type = "node2",
-        request = "launch",
-        sourceMaps = true,
-        args = {
-          "--inspect-brk",
-          "${workspaceFolder}/node_modules/.bin/jest.js",
-          "--runInBand"
-        },
-        module = cmd[1],
-        console = "integratedTerminal",
-        internalConsoleOptions = "neverOpen",
-        port = 9229
-      }
-    }
-  end
-
-  require'ultest'.setup{
-    builders = {
-      ['typescript#jest'] = fn,
-      ['javascript#jest'] = fn,
-    }
-  }
-EOF
-endif
+" if g:os != 'Windows'
+" let g:ultest_use_pty = 1
+" let g:ultest_virtual_text = 1
+" let g:test#javascript#runner = "jest"
+" let g:test#typescript#runner = "jest"
+" let test#strategy = "terminal"
+" lua << EOF
+"   function fn (cmd)
+"     return {
+"       dap = {
+"         type = "node2",
+"         request = "launch",
+"         sourceMaps = true,
+"         args = {
+"           "--inspect-brk",
+"           "${workspaceFolder}/node_modules/.bin/jest.js",
+"           "--runInBand"
+"         },
+"         module = cmd[1],
+"         console = "integratedTerminal",
+"         internalConsoleOptions = "neverOpen",
+"         port = 9229
+"       }
+"     }
+"   end
+"
+"   require'ultest'.setup{
+"     builders = {
+"       ['typescript#jest'] = fn,
+"       ['javascript#jest'] = fn,
+"     }
+"   }
+" EOF
+" endif
 
 " vgit
 lua << EOF
