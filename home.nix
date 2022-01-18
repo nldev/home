@@ -34,13 +34,14 @@ in
       python310
       nodejs-16_x
       powershell
-      # dotnet-aspnetcore
-      # dotnet-sdk_6
+      dotnet-aspnetcore
+      dotnet-sdk_6
       cargo
 
       # language servers
       rnix-lsp
       pyright
+      sumneko-lua-language-server
 
       # dependencies
       openssl
@@ -54,8 +55,8 @@ in
       mosh
       tmux
       vim
-      neovim
-      # neovim-nightly
+      # neovim
+      neovim-nightly
       neovim-remote
       taskwarrior
       timewarrior

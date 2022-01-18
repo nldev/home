@@ -141,10 +141,10 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
 " vim-ultest
-" if g:os != 'Windows'
-" Plug 'vim-test/vim-test'
-" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
-" endif
+if g:os != 'Windows'
+Plug 'vim-test/vim-test'
+Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+endif
 
 " choosewin
 Plug 't9md/vim-choosewin'
@@ -249,6 +249,9 @@ Plug 'stevearc/aerial.nvim'
 " ale
 " Plug 'dense-analysis/ale'
 
+" wilder
+" Plug 'gelguy/wilder.nvim'
+
 " js
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 call plug#end()
@@ -272,6 +275,16 @@ colorscheme ayu
 hi Search guifg=black guibg=#ccff00
 hi Searchlight guifg=white guibg=#f92672
 hi FocusedSymbol guifg=white gui=bold
+highlight! CmpItemAbbrMatch guibg=NONE guifg=#ccff00
+highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#f92672
+highlight! CmpItemKindFunction guibg=NONE guifg=#d2a6ff
+highlight! CmpItemKindMethod guibg=NONE guifg=#a37acc
+highlight! CmpItemKindVariable guibg=NONE guifg=#80bfff
+highlight! CmpItemKindKeyword guibg=NONE guifg=#f07171
+highlight! CmpItemKindFile guibg=NONE guifg=#fa8d3e
+highlight! CmpItemKindOperator guibg=NONE guifg=#ffd173
+highlight! CmpItemKindProperty guibg=NONE guifg=#399ee6
+highlight! CmpItemKindModule guibg=NONE guifg=#5ccfe6
 
 " sign column
 if has('nvim-0.5.0') || has('patch-8.1.1564')
@@ -971,6 +984,9 @@ lspconfig.jsonls.setup{
 lspconfig.dockerls.setup{
   -- on_attach = require("aerial").on_attach,
 }
+lspconfig.clangd.setup{
+  -- on_attach = require("aerial").on_attach,
+}
 -- lspconfig.angularls.setup{
 --   -- on_attach = require("aerial").on_attach,
 -- }
@@ -1085,12 +1101,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
 require'null-ls'.setup{ on_attach = on_attach }
 require'lsp_signature'.setup{}
 EOF
-highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
-highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
-highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
-highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
-highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
-highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
 
 " nvim-dap: javascript
 lua << EOF
@@ -1305,40 +1315,40 @@ require'nvim-tree'.setup{
 EOF
 
 " vim-ultest
-" if g:os != 'Windows'
-" let g:ultest_use_pty = 1
-" let g:ultest_virtual_text = 1
-" let g:test#javascript#runner = "jest"
-" let g:test#typescript#runner = "jest"
-" let test#strategy = "terminal"
-" lua << EOF
-"   function fn (cmd)
-"     return {
-"       dap = {
-"         type = "node2",
-"         request = "launch",
-"         sourceMaps = true,
-"         args = {
-"           "--inspect-brk",
-"           "${workspaceFolder}/node_modules/.bin/jest.js",
-"           "--runInBand"
-"         },
-"         module = cmd[1],
-"         console = "integratedTerminal",
-"         internalConsoleOptions = "neverOpen",
-"         port = 9229
-"       }
-"     }
-"   end
-"
-"   require'ultest'.setup{
-"     builders = {
-"       ['typescript#jest'] = fn,
-"       ['javascript#jest'] = fn,
-"     }
-"   }
-" EOF
-" endif
+if g:os != 'Windows'
+let g:ultest_use_pty = 1
+let g:ultest_virtual_text = 1
+let g:test#javascript#runner = "jest"
+let g:test#typescript#runner = "jest"
+let test#strategy = "terminal"
+lua << EOF
+  function fn (cmd)
+    return {
+      dap = {
+        type = "node2",
+        request = "launch",
+        sourceMaps = true,
+        args = {
+          "--inspect-brk",
+          "${workspaceFolder}/node_modules/.bin/jest.js",
+          "--runInBand"
+        },
+        module = cmd[1],
+        console = "integratedTerminal",
+        internalConsoleOptions = "neverOpen",
+        port = 9229
+      }
+    }
+  end
+
+  require'ultest'.setup{
+    builders = {
+      ['typescript#jest'] = fn,
+      ['javascript#jest'] = fn,
+    }
+  }
+EOF
+endif
 
 " vgit
 lua << EOF
@@ -1892,6 +1902,7 @@ function! RefreshScreen ()
     call CreateEmptyBuffer()
     wincmd q
   endif
+  ColorizerReloadAllBuffers
 endfunction
 
 " keybind: leader key
@@ -1950,7 +1961,7 @@ call NormalVisual('<leader>rr', ':source $MYVIMRC<cr><cmd>noh<cr>')
 call NormalVisual('<silent> <leader>e', '<cmd>call CreateEmptyBuffer()<cr>')
 
 " keybind: clear screen
-call NormalVisual('<silent> <leader>c', '<cmd>checktime<cr><cmd>noh<cr>:echo<cr>:<backspace>')
+call NormalVisual('<silent> <leader>c', '<cmd>checktime<cr><cmd>ColorizerReloadAllBuffers<cr><cmd>noh<cr>:echo<cr>:<backspace>')
 
 " keybind: refresh screen
 call NormalVisual('<silent> <leader>C', '<cmd>call RefreshScreen()<cr><cmd>NvimTreeRefresh<cr><cmd>checktime<cr><cmd>noh<cr>:echo<cr>:<backspace>')
