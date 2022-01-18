@@ -1,33 +1,49 @@
-{ config, pkgs, ... }:
+{ config, inputs, system, pkgs, ... }:
 
 let
   fetchGH = fq: rev: builtins.fetchTarball ("https://github.com/" + fq + "/archive/" + rev + ".tar.gz");
   locale = "C.UTF-8";
   homedir = builtins.getEnv "HOME";
   username = builtins.getEnv "USER";
-  neuron = fetchGH "srid/neuron" "dd900dd249742aabfb1dba89f498b6afdb7f4531";
+  # neuron = fetchGH "srid/neuron" "dd900dd249742aabfb1dba89f498b6afdb7f4531";
 in
 {
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    }))
+  ];
+
   home = {
     packages = with pkgs; [
       # system
       coreutils
       gnumake
-      gcc
+      cmake
+      llvm_13
+      lld
 
       # git
       git
       gh
 
       # languages
+      clang
       lua
       python27
       python310
       nodejs-17_x
       powershell
-      dotnet-aspnetcore
+      # dotnet-aspnetcore
+      # dotnet-sdk_6
+      cargo
+
+      # language servers
+      rnix-lsp
+      pyright
 
       # dependencies
+      openssl
       fzf
       fasd
       sqlite
@@ -39,6 +55,7 @@ in
       tmux
       vim
       neovim
+      # neovim-nightly
       neovim-remote
       taskwarrior
       timewarrior
@@ -57,7 +74,8 @@ in
       viu
       bat
       neofetch
-      (import neuron {name = "neuron";})
+      jq
+      # (import neuron {name = "neuron";})
     ];
 
     sessionVariables = {
@@ -129,7 +147,9 @@ in
       abbr u \"nix-channel --update && home-manager switch\"
 
       export NNN_OPENER=\"wslopen\"
+      export NODE_PATH=~/.npm-packages/lib/node_modules
 
+      fish_add_path -m ~/.npm-packages/bin
       fish_add_path -m ~/sync/bin
     ";
     plugins = [
@@ -220,5 +240,7 @@ in
   home.file.".config/nvim/autoload/plug.vim".source = ./dots/config/nvim/autoload/plug.vim;
   home.file.".vimrc".source = ./dots/vimrc;
   home.file.".tmux.conf".source = ./dots/tmux.conf;
+  home.file.".npmrc".source = ./dots/npmrc;
 }
+
 

@@ -290,13 +290,14 @@ set belloff=all                " turn off visual bell and beep
 
 set timeoutlen=500             " set key sequence timeout
 set ttimeoutlen=0              " remove key code delay
-set updatetime=1000             " set update delay
+set updatetime=1000            " set update delay
 
 set scrolloff=0                " always keep cursor 8 lines from boundary
 set fillchars=""               " remove unnecessary chars in separators
 set clipboard+=unnamedplus     " add unnamed register to clipboard
 set wildmenu                   " improve command-line completion
-" set autochdir                  " automatically switch working directory when switching buffers
+set wildcharm=<c-f>            " wildmenu autocomplete
+" set autochdir                " automatically switch working directory when switching buffers
 
 set inccommand=nosplit         " show ex command previews
 set hlsearch                   " highlight all search results
@@ -1585,6 +1586,22 @@ endfunction
 
 " is lsp buffer
 function! IsLspBuffer() abort
+  if (&filetype == 'python')
+    return 1
+  endif
+
+  if (&filetype == 'html')
+    return 1
+  endif
+
+  " if (&filetype == 'nix')
+  "   return 1
+  " endif
+
+  if (&filetype == 'lua')
+    return 1
+  endif
+
   if (&filetype == 'javascript')
     return 1
   endif
@@ -1601,13 +1618,21 @@ function! IsLspBuffer() abort
     return 1
   endif
 
-  " if (&filetype == 'markdown')
-  "   return 1
-  " endif
+  if (&filetype == 'vue')
+    return 1
+  endif
 
-  " if (&filetype == 'telekasten')
-  "   return 1
-  " endif
+  if (&filetype == 'vim')
+    return 1
+  endif
+
+  if (&filetype == 'markdown')
+    return 1
+  endif
+
+  if (&filetype == 'telekasten')
+    return 1
+  endif
 
   return 0
 endfunction
@@ -1631,6 +1656,10 @@ function! IsCodeBuffer() abort
   endif
 
   if (&filetype == 'typescriptreact')
+    return 1
+  endif
+
+  if (&filetype == 'vue')
     return 1
   endif
 
