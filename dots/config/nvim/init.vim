@@ -296,7 +296,6 @@ set scrolloff=0                " always keep cursor 8 lines from boundary
 set fillchars=""               " remove unnecessary chars in separators
 set clipboard+=unnamedplus     " add unnamed register to clipboard
 set wildmenu                   " improve command-line completion
-set wildcharm=<c-f>            " wildmenu autocomplete
 " set autochdir                " automatically switch working directory when switching buffers
 
 set inccommand=nosplit         " show ex command previews
@@ -387,7 +386,7 @@ if g:os == 'Windows'
 endif
 
 " always refresh
-autocmd BufEnter * checktime
+autocmd BufEnter * if (IsCodeBuffer() == 1) | checktime | endif
 
 " markdown
 let g:markdown_fenced_languages = [
@@ -401,7 +400,6 @@ let g:markdown_fenced_languages = [
 
 " ale
 let b:ale_linters = ['eslint']
-let g:ale_completion_enabled = 1
 let g:ale_completion_autoimport = 1
 let b:ale_fixers = ['eslint']
 
@@ -566,25 +564,6 @@ _G.QFListPicker = function(opts)
     sorter = conf.generic_sorter(opts),
   }):find()
 end
-EOF
-
-" aerial
-lua << EOF
-require("lspconfig").vimls.setup{
-  on_attach = require("aerial").on_attach,
-}
-require("aerial").setup({
-  on_attach = function(bufnr)
-    -- Toggle the aerial window with <leader>a
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>0', '<cmd>AerialToggle!<CR>', {})
-    -- Jump forwards/backwards with '{' and '}'
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
-    -- Jump up the tree with '[[' or ']]'
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrevUp<CR>', {})
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', ']]', '<cmd>AerialNextUp<CR>', {})
-  end
-})
 EOF
 
 " nvim-colorizer
@@ -878,7 +857,7 @@ endif
 let g:scratch_filetype = 'markdown'
 let g:scratch_height = 30
 
-" nvim-cmp
+" lsp
 set completeopt=menu,menuone,noselect
 lua << EOF
 -- Setup nvim-cmp.
@@ -957,12 +936,62 @@ capabilities.textDocument.codeAction = {
   }
 }
 
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+-- require'aerial'.setup({
+--   on_attach = function(client, bufnr)
+--     -- Toggle the aerial window with <leader>a
+--     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>0', '<cmd>AerialToggle!<CR>', {})
+--     -- Jump forwards/backwards with '{' and '}'
+--     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
+--     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
+--     -- Jump up the tree with '[[' or ']]'
+--     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '[[', '<cmd>AerialPrevUp<CR>', {})
+--     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', ']]', '<cmd>AerialNextUp<CR>', {})
+--   end
+-- })
+
 local lspconfig = require("lspconfig")
+lspconfig.vuels.setup{
+  -- on_attach = require("aerial").on_attach,
+}
+lspconfig.cssls.setup{
+  -- on_attach = require("aerial").on_attach,
+}
+lspconfig.rnix.setup{
+  -- on_attach = require("aerial").on_attach,
+}
+lspconfig.sumneko_lua.setup{
+  -- on_attach = require("aerial").on_attach,
+}
+lspconfig.html.setup{
+  -- on_attach = require("aerial").on_attach,
+}
+-- lspconfig.remark_ls.setup{
+-- }
+lspconfig.pyright.setup{
+  -- on_attach = require("aerial").on_attach,
+}
+lspconfig.jsonls.setup{
+  -- on_attach = require("aerial").on_attach,
+}
+lspconfig.dockerls.setup{
+  -- on_attach = require("aerial").on_attach,
+}
+-- lspconfig.angularls.setup{
+--   -- on_attach = require("aerial").on_attach,
+-- }
+lspconfig.yamlls.setup{
+  -- on_attach = require("aerial").on_attach,
+}
+-- lspconfig.eslint.setup{
+--   -- on_attach = require("aerial").on_attach,
+-- }
+lspconfig.vimls.setup{
+  -- on_attach = require("aerial").on_attach,
+}
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
-    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
-        silent = true,
-    })
+  vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
+      silent = true,
+  })
 end
 local on_attach = function(client, bufnr)
     vim.cmd("command! LspDef lua vim.lsp.buf.definition()")
@@ -1061,6 +1090,12 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
 require'null-ls'.setup{ on_attach = on_attach }
 require'lsp_signature'.setup{}
 EOF
+highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
+highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
+highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
+highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
+highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
 
 " nvim-dap: javascript
 lua << EOF
@@ -1626,13 +1661,13 @@ function! IsLspBuffer() abort
     return 1
   endif
 
-  if (&filetype == 'markdown')
-    return 1
-  endif
+  " if (&filetype == 'markdown')
+  "   return 1
+  " endif
 
-  if (&filetype == 'telekasten')
-    return 1
-  endif
+  " if (&filetype == 'telekasten')
+  "   return 1
+  " endif
 
   return 0
 endfunction
@@ -2808,4 +2843,7 @@ nnoremap <silent> <c-w>9v <cmd>vertical resize 90<cr>
 
 " keybind: easy window balance
 nnoremap <silent> <c-w><space> <cmd>wincmd =<cr>
+
+" keybind: command-line mode autocomplete
+cmap <c-f> <Tab>
 

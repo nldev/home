@@ -32,7 +32,7 @@ in
       lua
       python27
       python310
-      nodejs-17_x
+      nodejs-16_x
       powershell
       # dotnet-aspnetcore
       # dotnet-sdk_6
@@ -242,5 +242,4 @@ in
   home.file.".tmux.conf".source = ./dots/tmux.conf;
   home.file.".npmrc".source = ./dots/npmrc;
 }
-
 
