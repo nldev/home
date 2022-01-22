@@ -141,10 +141,10 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
 " vim-ultest
-if g:os != 'Windows'
-Plug 'vim-test/vim-test'
-Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
-endif
+" if g:os != 'Windows'
+" Plug 'vim-test/vim-test'
+" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+" endif
 
 " choosewin
 Plug 't9md/vim-choosewin'
@@ -1315,40 +1315,40 @@ require'nvim-tree'.setup{
 EOF
 
 " vim-ultest
-if g:os != 'Windows'
-let g:ultest_use_pty = 1
-let g:ultest_virtual_text = 1
-let g:test#javascript#runner = "jest"
-let g:test#typescript#runner = "jest"
-let test#strategy = "terminal"
-lua << EOF
-  function fn (cmd)
-    return {
-      dap = {
-        type = "node2",
-        request = "launch",
-        sourceMaps = true,
-        args = {
-          "--inspect-brk",
-          "${workspaceFolder}/node_modules/.bin/jest.js",
-          "--runInBand"
-        },
-        module = cmd[1],
-        console = "integratedTerminal",
-        internalConsoleOptions = "neverOpen",
-        port = 9229
-      }
-    }
-  end
-
-  require'ultest'.setup{
-    builders = {
-      ['typescript#jest'] = fn,
-      ['javascript#jest'] = fn,
-    }
-  }
-EOF
-endif
+" if g:os != 'Windows'
+" let g:ultest_use_pty = 1
+" let g:ultest_virtual_text = 1
+" let g:test#javascript#runner = "jest"
+" let g:test#typescript#runner = "jest"
+" let test#strategy = "terminal"
+" lua << EOF
+"   function fn (cmd)
+"     return {
+"       dap = {
+"         type = "node2",
+"         request = "launch",
+"         sourceMaps = true,
+"         args = {
+"           "--inspect-brk",
+"           "${workspaceFolder}/node_modules/.bin/jest.js",
+"           "--runInBand"
+"         },
+"         module = cmd[1],
+"         console = "integratedTerminal",
+"         internalConsoleOptions = "neverOpen",
+"         port = 9229
+"       }
+"     }
+"   end
+"
+"   require'ultest'.setup{
+"     builders = {
+"       ['typescript#jest'] = fn,
+"       ['javascript#jest'] = fn,
+"     }
+"   }
+" EOF
+" endif
 
 " vgit
 lua << EOF
@@ -1523,6 +1523,15 @@ function! NewNote()
   if name != ''
     let date = strftime("%Y%m%d%H%M%S")
     execute 'e ~/sync/notes/' . name . '.md'
+  endif
+endfunction
+
+" save as note
+function! SaveNote()
+  let name = Prompt("Enter name")
+  if name != ''
+    let date = strftime("%Y%m%d%H%M%S")
+    execute 'sav ~/sync/notes/' . name . '.md'
   endif
 endfunction
 
@@ -2539,9 +2548,10 @@ endfunction
 nnoremap <silent> <leader>nz <cmd>call SaveBufferAsNote(0)<cr>
 nnoremap <silent> <leader>nZ <cmd>call SaveBufferAsNote(1)<cr>
 
+call NormalVisual('<silent> <leader>nc', ':call SaveNote()<cr>')
 if g:os == 'Windows'
   call NormalVisual('<silent> <leader>nn', ':lua require"telescope.builtin".file_browser{ cwd = "~/sync/notes" }<cr>')
-  call NormalVisual('<silent> <leader>nc', ':call NewNote()<cr>')
+  call NormalVisual('<silent> <leader>ne', ':call NewNote()<cr>')
 else
   nnoremap <leader>nn <cmd>lua require('telekasten').find_notes()<cr>
   nnoremap <leader>nd <cmd>lua require('telekasten').find_daily_notes()<cr>
@@ -2550,8 +2560,8 @@ else
   nnoremap <leader>nt <cmd>lua require('telekasten').goto_today()<cr>
   " nnoremap <leader>nW <cmd>lua require('telekasten').goto_thisweek()<cr>
   " nnoremap <leader>nw <cmd>lua require('telekasten').find_weekly_notes()<cr>
-  nnoremap <leader>nc <cmd>lua require('telekasten').new_note()<cr>
-  nnoremap <leader>nC <cmd>lua require('telekasten').new_templated_note()<cr>
+  nnoremap <leader>ne <cmd>lua require('telekasten').new_note()<cr>
+  nnoremap <leader>nE <cmd>lua require('telekasten').new_templated_note()<cr>
   nnoremap <leader>ny <cmd>lua require('telekasten').yank_notelink()<cr>
   nnoremap <leader>nx <cmd>lua require('telekasten').show_calendar()<cr>
   nnoremap <leader>nX <cmd>CalendarT<cr>
