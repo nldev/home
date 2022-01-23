@@ -1523,6 +1523,7 @@ function! NewNote()
   if name != ''
     let date = strftime("%Y%m%d%H%M%S")
     execute 'e ~/sync/notes/' . name . '.md'
+    set filetype=telekasten
   endif
 endfunction
 
@@ -1532,6 +1533,7 @@ function! SaveNote()
   if name != ''
     let date = strftime("%Y%m%d%H%M%S")
     execute 'sav ~/sync/notes/' . name . '.md'
+    set filetype=telekasten
   endif
 endfunction
 
