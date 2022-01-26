@@ -119,6 +119,9 @@ Plug 'bkad/CamelCaseMotion'
 " vim-open-url
 Plug 'dhruvasagar/vim-open-url'
 
+" one-small-step-for-vimkind
+Plug 'jbyuki/one-small-step-for-vimkind'
+
 " luasnip
 Plug 'L3MON4D3/LuaSnip'
 
@@ -2369,15 +2372,22 @@ endfunction
 nnoremap <silent> <leader>/ :call ToggleWrap()<cr>
 
 " keybind: tswow
+function! TSWowSaveMap()
+  silent execute '!sh /mnt/c/Users/Administrator/dev/noggit/save.sh'
+  lua terminal_send('build maps\r\n')
+endfunction
+
 nnoremap <silent> <leader>t? :lua terminal_send('help\r\n')<cr>
 nnoremap <silent> <leader>tb :lua terminal_send('build database\r\n')<cr>
 nnoremap <silent> <leader>tt :lua terminal_send('build all\r\n')<cr>
 nnoremap <silent> <leader>td :lua terminal_send('build datascripts\r\n')<cr>
 nnoremap <silent> <leader>tl :lua terminal_send('build livescripts\r\n')<cr>
 nnoremap <silent> <leader>ta :lua terminal_send('build addon\r\n')<cr>
+nnoremap <silent> <leader>tp :lua terminal_send('package client basemod\r\n')<cr>
 nnoremap <silent> <leader>tr :lua terminal_send('start realm\r\n')<cr>
 nnoremap <silent> <leader>tc :lua terminal_send('start client\r\n')<cr>
 nnoremap <silent> <leader>t; :lua terminal_send('build datascripts --no-restart\r\n')<cr>
+nnoremap <silent> <leader>tm :call TSWowSaveMap()<cr>
 
 function! WoWNpcSearch()
   let l:query = Prompt('NPC search query')

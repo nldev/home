@@ -67,6 +67,7 @@ in
       exa
       dos2unix
       lynx
+      p7zip
       unzip
       mediainfo
       mktemp
