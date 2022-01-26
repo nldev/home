@@ -2876,8 +2876,8 @@ nnoremap <silent> <c-w><space> <cmd>wincmd =<cr>
 cmap <c-f> <Tab>
 
 " dos2unix
-nnoremap <silent> <c-x>u <cmd>set ff=unix<cr>
+nnoremap <c-x>u <cmd>set ff=unix<cr>
 
 " unix2dos
-nnoremap <silent> <c-x>U <cmd>set ff=dos<cr>
+nnoremap <c-x>U <cmd>set ff=dos<cr>
 
