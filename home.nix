@@ -20,15 +20,15 @@ in
       coreutils
       gnumake
       cmake
-      gcc
-      llvm_13
-      lld
 
       # git
       git
       gh
 
       # languages
+      llvmPackages_13.clang
+      llvmPackages_13.lld
+      llvm_13
       lua
       python27
       python310
