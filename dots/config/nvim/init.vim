@@ -241,10 +241,10 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'kassio/neoterm'
 
 " nvim-treesitter
-" Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-" Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-" Plug 'nvim-treesitter/nvim-treesitter-refactor'
-" Plug 'p00f/nvim-ts-rainbow'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'p00f/nvim-ts-rainbow'
 
 " aerial
 Plug 'stevearc/aerial.nvim'
@@ -622,89 +622,89 @@ let g:beacon_size = 40
 let g:beacon_ignore_filetypes = ['NvimTree', 'neoterm', 'terminal', 'Outline', 'dashboard']
 
 " nvim-treesitter
-" lua << EOF
-" require'nvim-treesitter.configs'.setup{
-"   ensure_installed = 'maintained',
-"   sync_install = false,
-"   rainbow = {
-"     enable = true,
-"     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-"     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-"     max_file_lines = nil, -- Do not enable for files with more than n lines, int
-"     -- colors = {}, -- table of hex strings
-"     -- termcolors = {} -- table of colour name strings
-"   },
-"   refactor = {
-"     highlight_definitions = { enable = false },
-"     highlight_current_scope = { enable = false },
-"     navigation = {
-"       enable = true,
-"       keymaps = {
-"         goto_definition = "<leader>jd",
-"         list_definitions = "<leader>jD",
-"         -- goto_next_usage = "<a-*>",
-"         -- goto_previous_usage = "<a-#>",
-"       },
-"     },
-"     smart_rename = {
-"       enable = true,
-"       keymaps = {
-"         smart_rename = "<leader>jl",
-"       },
-"     },
-"   },
-"   indent = {
-"     enable = true,
-"   },
-"   highlight = {
-"     enable = true,
-" },
-"   -- incremental_selection = {
-"   --   enable = true,
-"   --   keymaps = {
-"   --     init_selection = 'gnn',
-"   --     node_incremental = 'grn',
-"   --     scope_incremental = 'grc',
-"   --     node_decremental = 'grm',
-"   --   },
-"   -- },
-"   textobjects = {
-"     select = {
-"       enable = true,
-"       lookahead = true, -- automatically jump forward to textobj, similar to targets.vim
-"       keymaps = {
-"         -- you can use the capture groups defined in textobjects.scm
-"         ['af'] = '@function.outer',
-"         ['if'] = '@function.inner',
-"         ['ac'] = '@class.outer',
-"         ['ic'] = '@class.inner',
-"       },
-"     },
-"     move = {
-"       enable = true,
-"       set_jumps = true, -- whether to set jumps in the jumplist
-"       goto_next_start = {
-"         ["<c-g>ff"] = "@function.outer",
-"         ["<c-g>cc"] = "@class.outer",
-"       },
-"       goto_next_end = {
-"         ["<c-g>fe"] = "@function.outer",
-"         ["<c-g>ce"] = "@class.outer",
-"       },
-"       goto_previous_start = {
-"         ["<c-g>FF"] = "@function.outer",
-"         ["<c-g>CC"] = "@class.outer",
-"       },
-"       goto_previous_end = {
-"         ["<c-g>FE"] = "@function.outer",
-"         ["<c-g>CE"] = "@class.outer",
-"       },
-"     },
-"   },
-" }
-" -- require'tree-sitter-typescript'.typescript{}
-" -- require'tree-sitter-typescript'.tsx{}
-" EOF
+lua << EOF
+require'nvim-treesitter.configs'.setup{
+  ensure_installed = 'maintained',
+  sync_install = false,
+  rainbow = {
+    enable = true,
+    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+    -- colors = {}, -- table of hex strings
+    -- termcolors = {} -- table of colour name strings
+  },
+  refactor = {
+    highlight_definitions = { enable = false },
+    highlight_current_scope = { enable = false },
+    navigation = {
+      enable = true,
+      keymaps = {
+        goto_definition = "<leader>jd",
+        list_definitions = "<leader>jD",
+        -- goto_next_usage = "<a-*>",
+        -- goto_previous_usage = "<a-#>",
+      },
+    },
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        smart_rename = "<leader>jl",
+      },
+    },
+  },
+  indent = {
+    enable = true,
+  },
+  highlight = {
+    enable = true,
+},
+  -- incremental_selection = {
+  --   enable = true,
+  --   keymaps = {
+  --     init_selection = 'gnn',
+  --     node_incremental = 'grn',
+  --     scope_incremental = 'grc',
+  --     node_decremental = 'grm',
+  --   },
+  -- },
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true, -- automatically jump forward to textobj, similar to targets.vim
+      keymaps = {
+        -- you can use the capture groups defined in textobjects.scm
+        ['af'] = '@function.outer',
+        ['if'] = '@function.inner',
+        ['ac'] = '@class.outer',
+        ['ic'] = '@class.inner',
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        ["<c-g>ff"] = "@function.outer",
+        ["<c-g>cc"] = "@class.outer",
+      },
+      goto_next_end = {
+        ["<c-g>fe"] = "@function.outer",
+        ["<c-g>ce"] = "@class.outer",
+      },
+      goto_previous_start = {
+        ["<c-g>FF"] = "@function.outer",
+        ["<c-g>CC"] = "@class.outer",
+      },
+      goto_previous_end = {
+        ["<c-g>FE"] = "@function.outer",
+        ["<c-g>CE"] = "@class.outer",
+      },
+    },
+  },
+}
+-- require'tree-sitter-typescript'.typescript{}
+-- require'tree-sitter-typescript'.tsx{}
+EOF
 set foldexpr=nvim_treesitter#foldexpr()
 hi rainbowcol4 guifg=#55B4D4
 hi rainbowcol6 guifg=#A37ACC
@@ -1413,9 +1413,9 @@ require('telekasten').setup({
   -- if true, telekasten will be enabled when opening a note within the configured home
   take_over_my_home = true,
 
-  dailies      = home .. '/' .. 'journal',
+  -- dailies      = home .. '/' .. 'journal',
   -- weeklies     = home .. '/' .. 'weekly',
-  templates    = home .. '/' .. 'templates',
+  -- templates    = home .. '/' .. 'templates',
 
   -- image subdir for pasting
   -- subdir name
@@ -1437,7 +1437,7 @@ require('telekasten').setup({
 
   -- template for newly created daily notes (goto_today)
   -- set to `nil` or do not specify if you do not want a template
-  template_new_daily = home .. '/' .. 'templates/daily.md',
+  -- template_new_daily = home .. '/' .. 'templates/daily.md',
 
   -- template for newly created weekly notes (goto_thisweek)
   -- set to `nil` or do not specify if you do not want a template

@@ -20,6 +20,7 @@ in
       coreutils
       gnumake
       cmake
+      gcc
       llvm_13
       lld
 
@@ -28,7 +29,6 @@ in
       gh
 
       # languages
-      clang
       lua
       python27
       python310
