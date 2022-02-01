@@ -2045,7 +2045,7 @@ nnoremap <silent> <c-x>8 "=strftime("%FT%T%z")<cr>p
 vnoremap <silent> <c-x>8 "=strftime("%FT%T%z")<cr>p
 
 " keybind: panels
-nnoremap <silent> <leader>9 <cmd>NvimTreeRefresh<cr><cmd>NvimTreeToggle<cr><c-w>p
+nnoremap <silent> <leader>9 <cmd>NvimTreeRefresh<cr><cmd>NvimTreeToggle<cr><c-w>p<c-w>=
 " nnoremap <silent> <leader>0 <cmd>SymbolsOutline<cr><c-w>p
 
 " keybind: telescope - files
