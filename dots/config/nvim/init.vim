@@ -2129,7 +2129,7 @@ if g:os == 'Windows'
 endif
 
 " keybind: telescope - buffers
-call NormalVisual('<silent> <leader>s', ':lua require"telescope.builtin".buffers{ path_display = {"tail"} }<cr>')
+call NormalVisual('<silent> <leader>x', ':lua require"telescope.builtin".buffers{ path_display = {"tail"} }<cr>')
 
 " keybind: telescope - keymaps
 call NormalVisual('<silent> <leader>kk', '<cmd>Telescope keymaps<cr>')
@@ -2622,7 +2622,7 @@ endfunction
 nnoremap <silent> <leader>iv <cmd>call OpenVideo()<cr>
 
 " save current file
-nnoremap <silent> <leader>l <cmd>w<cr>
+nnoremap <silent> <leader>s <cmd>w<cr>
 
 " center current window
 nnoremap <silent> <c-w>; <cmd>wincmd v<cr><cmd>call CreateEmptyBuffer()<cr><cmd>wincmd =<cr><cmd>wincmd l<cr><cmd>wincmd v<cr><cmd>wincmd l<cr><cmd>call CreateEmptyBuffer()<cr><cmd>wincmd h<cr><cmd>wincmd =<cr>
