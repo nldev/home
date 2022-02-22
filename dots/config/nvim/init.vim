@@ -1916,7 +1916,6 @@ function! RefreshScreen ()
     call CreateEmptyBuffer()
     wincmd q
   endif
-  ColorizerReloadAllBuffers
 endfunction
 
 " keybind: leader key
@@ -1975,7 +1974,7 @@ call NormalVisual('<leader>rr', ':source $MYVIMRC<cr><cmd>noh<cr>')
 call NormalVisual('<silent> <leader>e', '<cmd>call CreateEmptyBuffer()<cr>')
 
 " keybind: clear screen
-call NormalVisual('<silent> <leader>c', '<cmd>checktime<cr><cmd>ColorizerReloadAllBuffers<cr><cmd>noh<cr>:echo<cr>:<backspace>')
+call NormalVisual('<silent> <leader>c', '<cmd>checktime<cr><cmd>noh<cr>:echo<cr>:<backspace>')
 
 " keybind: refresh screen
 call NormalVisual('<silent> <leader>C', '<cmd>call RefreshScreen()<cr><cmd>NvimTreeRefresh<cr><cmd>checktime<cr><cmd>noh<cr>:echo<cr>:<backspace>')

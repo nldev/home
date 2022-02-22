@@ -17,21 +17,21 @@ in
   home = {
     packages = with pkgs; [
       # system
-      coreutils
-      gnumake
-      cmake
+      # coreutils
+      # gnumake
+      # cmake
 
       # git
       git
       gh
 
       # languages
-      llvmPackages_13.clang
-      llvmPackages_13.lld
+      # llvmPackages_13.clang
+      # llvmPackages_13.lld
       lua
       python27
       python310
-      nodejs-16_x
+      nodejs-17_x
       powershell
       dotnet-aspnetcore
       dotnet-sdk_6
@@ -43,7 +43,7 @@ in
       sumneko-lua-language-server
 
       # dependencies
-      openssl
+      # openssl
       fzf
       fasd
       sqlite
@@ -66,8 +66,8 @@ in
       exa
       dos2unix
       lynx
-      p7zip
-      unzip
+      # p7zip
+      # unzip
       mediainfo
       mktemp
       atool
