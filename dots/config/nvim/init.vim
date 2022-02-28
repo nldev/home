@@ -2880,3 +2880,6 @@ nnoremap <c-x>u <cmd>set ff=unix<cr><cmd>echo "file converted to unix"<cr>
 " unix2dos
 nnoremap <c-x>U <cmd>set ff=dos<cr><cmd>echo "file converted to dos"<cr>
 
+" keybind: ctrl-space escape
+map <silent> <c-Space> <esc>
+
