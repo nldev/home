@@ -397,6 +397,7 @@ augroup END
 au BufWinEnter * if &filetype == 'qf' | setlocal modifiable | endif
 
 " terminal
+set scrollback=100000
 if g:os == 'Windows'
   set shell=cmd
 endif
