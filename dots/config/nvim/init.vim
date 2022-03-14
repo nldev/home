@@ -116,6 +116,9 @@ Plug 'kevinhwang91/nvim-bqf'
 " camelcasemotion
 Plug 'bkad/CamelCaseMotion'
 
+" vim-husk
+Plug 'vim-utils/vim-husk'
+
 " vim-open-url
 Plug 'dhruvasagar/vim-open-url'
 
