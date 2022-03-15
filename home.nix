@@ -60,6 +60,7 @@ in
       taskwarrior
       timewarrior
       ranger
+      mycli
 
       # utilities
       lsix
