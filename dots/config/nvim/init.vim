@@ -117,7 +117,10 @@ Plug 'kevinhwang91/nvim-bqf'
 Plug 'bkad/CamelCaseMotion'
 
 " vim-husk
-Plug 'vim-utils/vim-husk'
+" Plug 'vim-utils/vim-husk'
+
+" vim-split-line
+Plug 'drzel/vim-split-line'
 
 " vim-open-url
 Plug 'dhruvasagar/vim-open-url'
@@ -2772,6 +2775,9 @@ nnoremap <leader>gf <cmd>Flog<cr>
 " keybind: vim-flog - split
 nnoremap <leader>gF <cmd>Flogsplit<cr>
 
+" vim-split-line
+nnoremap S :SplitLine<cr>
+
 " keybind: open file in new tab
 function! OpenInNewTab()
   let l:name = bufname()
@@ -2878,9 +2884,9 @@ nnoremap <silent> <c-w><space> <cmd>wincmd =<cr>
 " keybind: command-line mode autocomplete
 cmap <c-f> <Tab>
 
-" dos2unix
+" keybind: dos2unix
 nnoremap <c-x>u <cmd>set ff=unix<cr><cmd>echo "file converted to unix"<cr>
 
-" unix2dos
+" keybind: unix2dos
 nnoremap <c-x>U <cmd>set ff=dos<cr><cmd>echo "file converted to dos"<cr>
 

@@ -61,6 +61,7 @@ in
       timewarrior
       ranger
       mycli
+      mysql
 
       # utilities
       lsix
