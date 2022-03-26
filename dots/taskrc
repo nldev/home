@@ -1,1 +1,12 @@
-
+uda.est.type=numeric
+uda.est.label=Estimation
+uda.it.type=numeric
+uda.it.label=Iteration
+uda.epic.type=string
+uda.epic.label=Epic
+uda.ms.type=string
+uda.ms.label=Milestone
+uda.stage.type=string
+uda.stage.label=Status
+uda.stage.values=inbox,ready,wait,blocked
+uda.stage.default=inbox

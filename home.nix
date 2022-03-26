@@ -54,6 +54,7 @@ in
       mosh
       tmux
       vim
+      entr
       # neovim
       neovim-nightly
       neovim-remote
