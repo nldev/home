@@ -244,5 +244,7 @@ in
   home.file.".vimrc".source = ./dots/vimrc;
   home.file.".tmux.conf".source = ./dots/tmux.conf;
   home.file.".npmrc".source = ./dots/npmrc;
+  home.file.".timewarrior/timewarrior.cfg".source = ./dots/timewarrior/timewarrior.cfg;
+  home.file.".taskrc".source = ./dots/taskrc;
 }
 
