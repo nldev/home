@@ -1,0 +1,6 @@
+[init]
+	defaultBranch = "main"
+
+[user]
+	email = "nldev00@pm.me"
+	name = "nl"
